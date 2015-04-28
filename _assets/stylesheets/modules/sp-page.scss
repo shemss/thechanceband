@@ -1,0 +1,16 @@
+.sp-page {
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  &.affix {
+    top: 0;
+  }
+}
+
+.sp-page-home     { background-image: url('../images/home.jpg'); }
+.sp-page-music    { background-image: url('../images/music.jpg'); }
+.sp-page-media    { background-image: url('../images/media.jpg'); }
+.sp-page-story    { background-image: url('../images/story.jpg'); }
+.sp-page-connect  { background-image: url('../images/connect.jpg'); }

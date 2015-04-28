@@ -1,0 +1,20 @@
+{% for link in site.nav %}
+  {% if link.dropdown %}
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+      role="button" aria-expanded="false">
+      {{ link.title }}
+      <span class="caret"></span>
+    </a>
+
+    <ul class="dropdown-menu" role="menu">
+      {% for sublink in link.dropdown %}
+      {% include link.html link=sublink %}
+      {% endfor %}
+    </ul>
+  </li>
+  {% else %}
+  {% capture oddeven %}{% cycle 'odd', 'even' %}{% endcapture %}
+  {% include link.html link=link oddeven=oddeven %}
+  {% endif %}
+{% endfor %}

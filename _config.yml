@@ -1,0 +1,43 @@
+# Site settings
+title: Chance
+email: your-email@domain.com
+description: >
+  Chance began its journey in 1996. As a group they led many hearts
+  to Christ. They use their lyrics to inspire the young generation
+  of today’s times. Take the Chance and listen.
+baseurl: ""
+url: "http://thechanceband.com"
+
+collections:
+- sections
+
+social:
+  facebook: https://www.facebook.com/chancebandsongs
+  twitter: https://twitter.com/chancebandsongs
+  youtube: https://www.youtube.com/channel/UCyOswyvw8ugbS22ZSVop4bg
+  google-plus: https://plus.google.com/108316022689360703562/posts
+  pinterest: http://www.pinterest.com/sergshemyakin/
+
+nav:
+- title: Home
+  url: '#home'
+- title: Music
+  url: '#music'
+- title: Media
+  url: '#media'
+- title: Story
+  url: '#story'
+- title: Connect
+  url: '#connect'
+
+# Build settings
+markdown: kramdown
+exclude: [Gemfile, Gemfile.lock]
+
+gems:
+  - jekyll-assets
+  - jekyll-assets/bootstrap
+
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass

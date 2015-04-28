@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div id="fullpage">
+  {% assign sections = site.sections | sort: 'position' %}
+  {% for section in sections %}
+  <div class="section">
+    <div class="sp-page sp-page-{{ section.title | downcase }}">
+      {{ section.content }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
