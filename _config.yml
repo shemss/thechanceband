@@ -18,18 +18,6 @@ social:
   google-plus: https://plus.google.com/108316022689360703562/posts
   pinterest: http://www.pinterest.com/sergshemyakin/
 
-nav:
-- title: Home
-  url: '#home'
-- title: Music
-  url: '#music'
-- title: Media
-  url: '#media'
-- title: Story
-  url: '#story'
-- title: Connect
-  url: '#connect'
-
 # Build settings
 markdown: kramdown
 exclude: [Gemfile, Gemfile.lock]

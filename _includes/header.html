@@ -14,7 +14,14 @@
 
     <div class="collapse navbar-collapse" id="site-navbar">
       <ul class="nav navbar-nav navbar-center">
-        {% include nav.html %}
+        {% assign sections = site.sections | sort: 'position' %}
+        {% for section in sections %}
+          <li data-menuanchor="{{ section.title | downcase }}">
+            <a href="#{{ section.title | downcase }}">
+              {{ section.title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
