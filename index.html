@@ -7,7 +7,9 @@ layout: default
   {% for section in sections %}
   <div class="section">
     <div class="sp-page sp-page-{{ section.title | downcase }}">
-      {{ section.content }}
+      <div class="container">
+        {{ section.content }}
+      </div>
     </div>
   </div>
   {% endfor %}
