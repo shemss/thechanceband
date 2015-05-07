@@ -1,4 +1,71 @@
 ---
 title: Story
 position: 3
+members:
+- name: Serg Shemyakin
+  bio: >
+    I was born in Riga, Latvia. When I turned 6 my family moved to
+    Odessa, Ukraine and later on to USA. At the age of 14 when I
+    first grabbed a guitar and started playing I realized music was
+    my destiny. I wrote and composed my first song
+    “Years as the clouds” when I was 15 years old. My life and
+    inspiration began when I gave my life to Christ; He led me
+    through my darkest times. For me a song is like a cry from the
+    heart. When thoughts hit my hands I start writing and composing.
+- name: Vadim Kapakly
+  bio: >
+    I was born in Odessa, Ukraine. Music was always the life changing
+    experience in my life. First, I hated it during my 5 years of
+    piano lessons, and then was inspired by it. I am grateful to God,
+    that my teenage years I was able to spend with my “CHANCE”
+    brothers serving Christ and not my sinful nature.
+- name: Viktor Okunev
+  bio: >
+    I was born in Russia. From beginning of 7th grade I started
+    playing a Saxophone in jazz band. Growing up surrounded by church
+    friends and attending lots of youth activities I participated
+    singing in worship groups. In 1999 three musketeers from Odessa
+    Serg, Vadim and Aleksey formed a music band and have invited me
+    to join. Since then we are still together with one goal and one
+    destiny to be an encouragement to the world.
+- name: Aleksey Unknown
+  bio: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+    sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Our Story</h2>
+  </div>
+
+  <div class="panel-body">
+    The “Chance” band began its journey in 1996. Through their music
+    they led many hearts to Christ. They use their lyrics to inspire
+    the young generation of today’s times. Each and every one of the
+    group member’s dedicated their hearts and souls to God. They formed
+    an alliance between one another and brought their talents together
+    to form something bigger than just a band but a brotherly
+    friendship. Take the Chance and listen.
+  </div>
+</div>
+
+<div class="row">
+  {% for member in page.members %}
+  <div class="col-sm-6 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ member.name }}</h3>
+      </div>
+      <div class="panel-body">
+        {{ member.bio }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
