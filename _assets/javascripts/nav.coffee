@@ -1,18 +1,24 @@
+setupFullpage = ->
+  $('#fullpage .section').each ->
+    $section = $(this)
+    pageHeight = $section.children('.sp-page').outerHeight()
+    $section.height(Math.max(pageHeight, $(window).height()))
+
+
 initNav = ->
   $('.navbar-affix').affix
     offset:
       top: -> $(window).height() - $('.navbar-affix').outerHeight()
 
-  $('.sp-page').each (i) ->
-    $(this).affix
-      offset:
-        top: -> $(window).height() * i
+  setupFullpage()
+  $(window).resize setupFullpage
 
-  $('#fullpage').fullpage
-    scrollBar: true
-    touchSensitivity: 15
-    anchors: ['home', 'music', 'media', 'story', 'connect']
-    menu: '#site-navbar'
+  $('.sp-page').each (i) ->
+    $page = $(this)
+    $page.affix
+      offset:
+        top: -> $page.parent().offset().top +
+          $page.outerHeight() - $(window).height()
 
 
 $ initNav
