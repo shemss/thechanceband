@@ -1,3 +1,10 @@
+fixiOSBackgroundPosition = ->
+  iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent)
+
+  if iOS
+    $('.sp-page').css('background-attachment', 'scroll')
+
+
 setupFullpage = ->
   $('#fullpage .section').each ->
     $section = $(this)
@@ -10,15 +17,8 @@ initNav = ->
     offset:
       top: -> $(window).height() - $('.navbar-affix').outerHeight()
 
-  setupFullpage()
-  $(window).resize setupFullpage
-
-  $('.sp-page').each (i) ->
-    $page = $(this)
-    $page.affix
-      offset:
-        top: -> $page.parent().offset().top +
-          $page.outerHeight() - $(window).height()
+  $(window).resize(setupFullpage).resize()
+  fixiOSBackgroundPosition()
 
 
 $ initNav

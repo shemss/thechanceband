@@ -1,24 +1,9 @@
-#fullpage {
-  position: relative;
-
-  .section {
-    min-height: 100%;
-  }
-}
-
 .sp-page {
   background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   min-height: 100%;
   width: 100%;
-  position: relative;
-  z-index: 101;
-
-  &.affix {
-    bottom: 0;
-    position: fixed;
-    z-index: 100;
-  }
 
   > .container {
     padding-top: 70px;
