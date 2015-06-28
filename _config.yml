@@ -24,7 +24,7 @@ exclude: [Gemfile, Gemfile.lock]
 
 gems:
   - jekyll-assets
-  - jekyll-assets/bootstrap
+  - bootstrap-sass
 
 assets:
   js_compressor:  uglifier
