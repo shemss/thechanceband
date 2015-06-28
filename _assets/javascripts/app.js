@@ -2,3 +2,4 @@
 //= require vendor/jquery.scrollTo
 //= require ./bootstrap
 //= require nav
+//= require player

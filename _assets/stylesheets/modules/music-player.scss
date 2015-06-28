@@ -1,0 +1,19 @@
+.navbar-music {
+  position: relative;
+}
+
+#music-progress-bar {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  margin: -4px 0 -1px;
+  background: #666;
+}
+
+#music-progress {
+  width: 0;
+  height: 5px;
+  background: #0ef;
+}
