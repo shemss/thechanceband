@@ -27,6 +27,13 @@ prevButton = (e) ->
       prevPlayer()
 
 
+seekTrack = (e) ->
+  e.preventDefault()
+  position = e.originalEvent.layerX / $(this).outerWidth()
+  currentPlayer.getDuration (duration) ->
+    currentPlayer.seekTo duration * position
+
+
 nextTrack = ->
   currentPlayer.pause()
   currentPlayer.next()
@@ -91,6 +98,7 @@ initPlayers = ->
   $('#music-toggle').click toggleButton
   $('#music-next').click nextButton
   $('#music-prev').click prevButton
+  $('#music-progress-bar').on 'touchend touchleave click', seekTrack
 
 
 $ initPlayers
