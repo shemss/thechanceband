@@ -1,3 +1,16 @@
+.navbar-center {
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  float:none;
+}
+
+@media (min-width: $screen-md) {
+  .navbar-header {
+    position: absolute;
+  }
+}
+
 .navbar-affix {
   width: 100%;
   margin-bottom: 0;
