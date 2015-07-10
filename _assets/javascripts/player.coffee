@@ -3,10 +3,13 @@ players = null
 currentPlayer = null
 
 
-toggleButton = -> currentPlayer.toggle()
+toggleButton = (e) ->
+  e.preventDefault()
+  currentPlayer.toggle()
 
 
-nextButton = ->
+nextButton = (e) ->
+  e.preventDefault()
   currentPlayer.getSounds (sounds) ->
     currentPlayer.getCurrentSoundIndex (soundIndex) ->
       if sounds.length == soundIndex+1
@@ -15,7 +18,8 @@ nextButton = ->
         nextTrack()
 
 
-prevButton = ->
+prevButton = (e) ->
+  e.preventDefault()
   currentPlayer.getCurrentSoundIndex (soundIndex) ->
     if soundIndex
       prevTrack()
