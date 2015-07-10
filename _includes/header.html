@@ -10,6 +10,7 @@
       <a class="navbar-brand" href="#home">
         {{ site.title }}
       </a>
+      {% include music-player.html %}
     </div>
 
     <div class="collapse navbar-collapse" id="site-navbar">
@@ -22,13 +23,6 @@
             </a>
           </li>
         {% endfor %}
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right navbar-music">
-        <li><a href="#" id="music-prev">Previous</a></li>
-        <li><a href="#" id="music-toggle">Play/Pause</a></li>
-        <li><a href="#" id="music-next">Next</a></li>
-        <li id="music-progress-bar"><div id="music-progress"></div></li>
       </ul>
     </div>
   </div>

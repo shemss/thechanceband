@@ -66,8 +66,11 @@ initPlayer = (iframe, index) ->
   player.bind SC.Widget.Events.PLAY, ->
     playerIndex = index
     currentPlayer = player
+    $('#music-toggle').addClass('playing')
 
-  player.bind SC.Widget.Events.PAUSE, -> $('#music-progress-bar').hide()
+  player.bind SC.Widget.Events.PAUSE, ->
+    $('#music-progress-bar').hide()
+    $('#music-toggle').removeClass('playing')
 
   player.bind SC.Widget.Events.PLAY_PROGRESS, (e) ->
     $('#music-progress-bar').show()
