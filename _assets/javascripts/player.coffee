@@ -3,57 +3,50 @@ players = null
 currentPlayer = null
 
 
-toggleButton = (e) ->
+toggleTrack = (e) ->
   e.preventDefault()
-  currentPlayer.toggle()
+  player = $(this).siblings('.song-audio')[0]
+  if player == currentPlayer
+    toggleMusic(e)
+  else
+    currentPlayer.pause()
+    currentPlayer = player
+    playerIndex = players.index(player)
+    currentPlayer.currentTime = 0
+    currentPlayer.play()
+
+
+toggleMusic = (e) ->
+  e.preventDefault()
+  if currentPlayer.paused
+    currentPlayer.play()
+  else
+    currentPlayer.pause()
 
 
 nextButton = (e) ->
   e.preventDefault()
-  currentPlayer.getSounds (sounds) ->
-    currentPlayer.getCurrentSoundIndex (soundIndex) ->
-      if sounds.length == soundIndex+1
-        nextPlayer()
-      else
-        nextTrack()
+  nextPlayer()
 
 
 prevButton = (e) ->
   e.preventDefault()
-  currentPlayer.getCurrentSoundIndex (soundIndex) ->
-    if soundIndex
-      prevTrack()
-    else
-      prevPlayer()
+  prevPlayer()
 
 
 seekTrack = (e) ->
   e.preventDefault()
-  position = e.originalEvent.layerX / $(this).outerWidth()
-  currentPlayer.getDuration (duration) ->
-    currentPlayer.seekTo duration * position
-
-
-nextTrack = ->
-  currentPlayer.pause()
-  currentPlayer.next()
-  currentPlayer.seekTo(0)
-  currentPlayer.play()
-
-
-prevTrack = ->
-  currentPlayer.pause()
-  currentPlayer.prev()
-  currentPlayer.seekTo(0)
-  currentPlayer.play()
+  offsetX = e.originalEvent.clientX - $(this).offset().left
+  position = offsetX / $(this).outerWidth()
+  seekTo = currentPlayer.duration * position
+  currentPlayer.currentTime = seekTo
 
 
 nextPlayer = ->
   currentPlayer.pause()
   currentPlayer = players[++playerIndex]
   currentPlayer ?= players[playerIndex = 0]
-  currentPlayer.skip(0)
-  currentPlayer.seekTo(0)
+  currentPlayer.currentTime = 0
   currentPlayer.play()
 
 
@@ -61,41 +54,39 @@ prevPlayer = ->
   currentPlayer.pause()
   currentPlayer = players[--playerIndex]
   currentPlayer ?= players[playerIndex = players.length-1]
-  currentPlayer.getSounds (sounds) ->
-    currentPlayer.skip(sounds.length-1)
-    currentPlayer.seekTo(0)
-    currentPlayer.play()
+  currentPlayer.currentTime = 0
+  currentPlayer.play()
 
 
-initPlayer = (iframe, index) ->
-  player = SC.Widget iframe
-
-  player.bind SC.Widget.Events.PLAY, ->
+initPlayer = (player, index) ->
+  $(player)
+  .on 'playing', ->
     playerIndex = index
     currentPlayer = player
     $('#music-toggle').addClass('playing')
+    $(player).siblings('.song-toggle').addClass('playing')
 
-  player.bind SC.Widget.Events.PAUSE, ->
+  .on 'pause', ->
     $('#music-progress-bar').hide()
     $('#music-toggle').removeClass('playing')
+    $(player).siblings('.song-toggle').removeClass('playing')
 
-  player.bind SC.Widget.Events.PLAY_PROGRESS, (e) ->
+  .on 'timeupdate', ->
+    position = (100 / player.duration) * player.currentTime
     $('#music-progress-bar').show()
     $('#music-progress').css
-      width: "#{e.relativePosition*100}%"
+      width: "#{position}%"
 
-  player.bind SC.Widget.Events.FINISH, (e) ->
-    currentPlayer.isPaused (paused) ->
-      nextPlayer() if paused
-
-  player
+  .on 'ended', (e) -> nextPlayer()
 
 
 initPlayers = ->
-  players = $('.music-player-track').map (i) -> initPlayer this, i
+  players = $('.song-audio')
+  players.each (i) -> initPlayer this, i
   currentPlayer = players[playerIndex]
 
-  $('#music-toggle').click toggleButton
+  $('.song-toggle').click toggleTrack
+  $('#music-toggle').click toggleMusic
   $('#music-next').click nextButton
   $('#music-prev').click prevButton
   $('#music-progress-bar').on 'touchend touchleave click', seekTrack
