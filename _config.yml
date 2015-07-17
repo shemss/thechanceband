@@ -10,6 +10,8 @@ url: "http://thechanceband.com"
 
 collections:
 - sections
+- albums
+- songs
 
 social:
   facebook: https://www.facebook.com/chancebandsongs
