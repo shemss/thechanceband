@@ -1,11 +1,15 @@
-.navbar-center {
-  margin: 0 auto;
-  display: table;
-  table-layout: fixed;
-  float:none;
+.navbar-header {
+  position: relative;
 }
 
 @media (min-width: $screen-md) {
+  .navbar-center {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
+  }
+
   .navbar-header {
     position: absolute;
   }
