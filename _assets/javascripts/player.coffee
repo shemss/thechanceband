@@ -36,7 +36,7 @@ prevButton = (e) ->
 
 seekTrack = (e) ->
   e.preventDefault()
-  offsetX = e.originalEvent.clientX - $(this).offset().left
+  offsetX = e.originalEvent.pageX - $(this).offset().left
   position = offsetX / $(this).outerWidth()
   seekTo = currentPlayer.duration * position
   currentPlayer.currentTime = seekTo
