@@ -1,0 +1,28 @@
+.song {
+  @extend #music-toggle;
+  overflow: hidden;
+
+  .list-inline {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.playing .song-progress {
+    display: block;
+  }
+}
+
+.song-progress {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  background: rgba(0,150,200,0.1);
+}
+
+.song-toggle {
+  display: inline-block;
+  min-width: 12px;
+}

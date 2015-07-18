@@ -11,12 +11,12 @@ position: 1
     <ul class="list-group">
     {% assign songs = site.songs | where: 'album', album.title | sort: 'position' %}
     {% for song in songs %}
-      <li class="list-group-item">
-        <p>{{ song.title }}</p>
-        <ul class="list-inline">
+      <li class="list-group-item song clearfix">
+        <div class="song-progress"></div>
+        <ul class="list-inline pull-left">
           <li>
             <audio class="song-audio" src="{{ song.mp3 }}"></audio>
-            <a href="#" class="song-toggle">
+            <a href="#" class="song-toggle" title="Play/Pause">
               <span class="play">
                 <i class="fa fa-play"></i>
                 <span class="sr-only">Play</span>
@@ -27,22 +27,22 @@ position: 1
               </span>
             </a>
           </li>
-          <li><a href="{{ song.mp3 }}">
+          <li>{{ song.title }}</li>
+        </ul>
+        <ul class="list-inline pull-right">
+          <li><a href="{{ song.mp3 }}" title="Download">
             <i class="fa fa-download"></i>
-            Download
+            <span class="sr-only">Download</span>
           </a></li>
-          <li><a href="{{ song.mp3 }}">
-            <i class="fa fa-file-audio-o"></i>
-            Instrumental
+          <li><a href="{{ song.mp3 }}" title="Instrumental">
+            <i class="fa fa-music"></i>
+            <span class="sr-only">Instrumental</span>
           </a></li>
-          <li><a href="javascript:alert('{{ song.content }}');">
-            <i class="fa fa-file-text-o"></i>
-            Lyrics
-          </a></li>
-          <li><a href="javascript:alert('{{ song.content }}');">
+          <li><a href="javascript:alert('{{ song.content }}');" title="Lyrics/Chords">
             <i class="fa fa-file-text"></i>
-            Chords
+            <span class="sr-only">Lyrics/Chords</span>
           </a></li>
+          <!-- <li>Share</li> -->
         </ul>
       </li>
     {% endfor %}

@@ -64,17 +64,17 @@ initPlayer = (player, index) ->
     playerIndex = index
     currentPlayer = player
     $('#music-toggle').addClass('playing')
-    $(player).siblings('.song-toggle').addClass('playing')
+    $(player).closest('.song').addClass('playing')
 
   .on 'pause', ->
     $('#music-progress-bar').hide()
     $('#music-toggle').removeClass('playing')
-    $(player).siblings('.song-toggle').removeClass('playing')
+    $(player).closest('.song').removeClass('playing')
 
   .on 'timeupdate', ->
     position = (100 / player.duration) * player.currentTime
     $('#music-progress-bar').show()
-    $('#music-progress').css
+    $('#music-progress, .song-progress').css
       width: "#{position}%"
 
   .on 'ended', (e) -> nextPlayer()
