@@ -22,7 +22,7 @@ social:
 
 # Build settings
 markdown: kramdown
-exclude: [Gemfile, Gemfile.lock]
+exclude: [Gemfile, Gemfile.lock, config.ru]
 
 gems:
   - jekyll-assets
