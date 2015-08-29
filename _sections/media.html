@@ -1,4 +1,61 @@
 ---
 title: Media
 position: 2
+
+gallery:
+- image: aleksey-chance.jpg
+  title: Aleksey Chance
+- image: aleksey-practice-in-the-garage.jpg
+  title: Aleksey Practicing in the Garage
+- image: aleksey-trying-save-equipment.jpg
+  title: Aleksey Trying To Save Equipment
+- image: band.jpg
+  title: Band
+- image: camp-worship.png
+  title: Camp Worship
+- image: chance-band.jpg
+  title: Chance Band
+- image: chance.jpg
+  title: Chance
+- image: dreaming-of-the-sky.jpg
+  title: Dreaming of the Sky
+- image: first-oskar.png
+  title: First Oskar
+- image: friends-forever.jpg
+  title: Friends Forever
+- image: group-picture.jpg
+  title: Group Picture
+- image: late-night-lyrics.png
+  title: Late Night Lyrics
+- image: old-sacramento-town.jpg
+  title: Old Town Sacramento
+- image: playing-with-beats.png
+  title: Playing With Beats
+- image: serg-shemyakin-chance.jpg
+  title: Serg Shemyakin Chance
+- image: serg-shemyakin-practice-in-the-garage.jpg
+  title: Serg Shemyakin Practicing in the Garage
+- image: serg-vadim-aleksey-odessa-chance.png
+  title: Serg Vadim Aleksey Odessa Chance
+- image: the-chance.jpg
+  title: The Chance
+- image: vadim-practice-in-the-garage.jpg
+  title: Vadim Practicing in the Garage
 ---
+
+<div class="row">
+{% for item in page.gallery %}
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    {% assign args = ' [resize:400x400^]' %}
+    {% assign image_full = item.image | prepend: 'gallery/' %}
+    {% assign image_thumb = image_full | append: args %}
+    <div class="gallery-thumb">
+      <a href="{{ image_full | asset_path }}" class="lightbox"
+        rel="gallery" title="{{ item.title }}"
+        style="background-image:url({{ image_thumb | asset_path }})">
+        <p>{{ item.title }}</p>
+      </a>
+    </div>
+  </div>
+{% endfor %}
+</div>
