@@ -1,5 +1,5 @@
 .gallery-thumb {
-  margin-bottom: 30px;
+  margin-bottom: 6px;
 
   > a {
     display: block;
@@ -49,3 +49,22 @@
     }
   }
 }
+
+// Gallery row mods
+.row-gallery {
+  margin-bottom: 50px;
+}
+
+[class~="row-gallery"] {
+  padding: 0 12px;
+
+  [class^="col-"],
+  [class*=" col-"] {
+    padding: 0 3px;
+
+    @media (min-width: $screen-lg) {
+      width: 20%;
+    }
+  }
+}
+
