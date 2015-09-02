@@ -32,11 +32,26 @@ $avatar-margin: 48px + (15px * 2);
     @extend .text-muted;
   }
 
+  [data-scribe="element:name"] {
+    font-weight: bold;
+    color: $text-color;
+  }
+
   [data-scribe="element:user_link"]:hover {
     text-decoration: none;
 
     [data-scribe="element:name"] {
+      color: $link-hover-color;
       text-decoration: underline;
+    }
+  }
+
+  .timePosted a,
+  .interact a {
+    color: lighten($gray-light, 20%);
+
+    &:hover {
+      color: $link-hover-color;
     }
   }
 
