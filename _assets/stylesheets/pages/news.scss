@@ -7,15 +7,14 @@ $avatar-margin: 48px + (15px * 2);
     > li {
       @extend .panel;
       @extend .panel-default;
-      padding-top: 15px;
-      position: relative;
+      @extend .clearfix;
+      padding: 15px;
+      padding-left: $avatar-margin;
     }
   }
 
   .user,
   .tweet {
-    margin-left: $avatar-margin;
-    margin-right: 15px;
   }
 
   [data-scribe="element:avatar"] {
@@ -38,17 +37,17 @@ $avatar-margin: 48px + (15px * 2);
   }
 
   .timePosted {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    float: right;
+    margin-top: 3px;
+    margin-bottom: 0;
   }
 
   .interact {
-    @extend .panel-footer;
+    float: left;
     margin-bottom: 0;
 
     > a {
-      margin-right: 12px;
+      margin-right: 20px;
     }
   }
 }
