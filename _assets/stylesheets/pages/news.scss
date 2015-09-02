@@ -20,6 +20,8 @@ $avatar-margin: 48px + (15px * 2);
   [data-scribe="element:avatar"] {
     position: absolute;
     margin-left: -($avatar-margin - 15px);
+    width: 48px;
+    height: 48px;
   }
 
   .timePosted,
