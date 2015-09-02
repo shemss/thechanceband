@@ -7,7 +7,7 @@ fixiOSBackgroundPosition = ->
 
 setupFullpage = ->
   $('#fullpage .section').each ->
-    $section = $(this)
+    $section = $(this).height($(window).height())
     pageHeight = $section.children('.sp-page').outerHeight()
     $section.height(Math.max(pageHeight, $(window).height()))
 
