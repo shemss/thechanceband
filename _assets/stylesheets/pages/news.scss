@@ -1,0 +1,54 @@
+$avatar-margin: 48px + (15px * 2);
+
+#twitter-feed {
+  > ul {
+    @extend .list-unstyled;
+
+    > li {
+      @extend .panel;
+      @extend .panel-default;
+      padding-top: 15px;
+      position: relative;
+    }
+  }
+
+  .user,
+  .tweet {
+    margin-left: $avatar-margin;
+    margin-right: 15px;
+  }
+
+  [data-scribe="element:avatar"] {
+    position: absolute;
+    margin-left: -($avatar-margin - 15px);
+  }
+
+  .timePosted,
+  [data-scribe="element:screen_name"] {
+    @extend small;
+    @extend .text-muted;
+  }
+
+  [data-scribe="element:user_link"]:hover {
+    text-decoration: none;
+
+    [data-scribe="element:name"] {
+      text-decoration: underline;
+    }
+  }
+
+  .timePosted {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .interact {
+    @extend .panel-footer;
+    margin-bottom: 0;
+
+    > a {
+      margin-right: 12px;
+    }
+  }
+}
