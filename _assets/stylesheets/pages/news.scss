@@ -13,8 +13,10 @@ $avatar-margin: 48px + (15px * 2);
     }
   }
 
-  .user,
-  .tweet {
+  a {
+    @extend .truncate;
+    display: inline-block;
+    max-width: 100%;
   }
 
   [data-scribe="element:avatar"] {

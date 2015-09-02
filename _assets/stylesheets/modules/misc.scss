@@ -1,0 +1,11 @@
+.truncate {
+  // width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.auto-scale-and-crop {
+  background-size: cover;
+  background-position: center;
+}
