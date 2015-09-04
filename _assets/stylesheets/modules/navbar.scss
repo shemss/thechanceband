@@ -31,3 +31,25 @@
     top: auto;
   }
 }
+
+.navbar-nav > li > a {
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -ms-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.navbar-toggle {
+  .icon-bar {
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+  }
+
+  &:hover .icon-bar {
+    background-color: $navbar-inverse-link-hover-color;
+  }
+}
