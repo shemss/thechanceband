@@ -49,13 +49,12 @@ gallery:
     {% assign args = ' [resize:400x400^]' %}
     {% assign image_full = item.image | prepend: 'gallery/' %}
     {% assign image_thumb = image_full | append: args %}
-    <div class="gallery-thumb">
-      <a href="{{ image_full | asset_path }}" class="lightbox"
-        rel="gallery" title="{{ item.title }}"
-        style="background-image:url({{ image_thumb | asset_path }})">
-        <p>{{ item.title }}</p>
-      </a>
-    </div>
+    <a class="gallery-item lightbox" rel="gallery"
+      href="{{ image_full | asset_path }}" title="{{ item.title }}">
+      <div class="gallery-thumb"
+        style="background-image:url({{ image_thumb | asset_path }})"></div>
+      <p class="gallery-title">{{ item.title }}</p>
+    </a>
   </div>
 {% endfor %}
 </div>
