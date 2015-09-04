@@ -1,0 +1,27 @@
+.navbar-brand {
+  text-indent: -100000px;
+
+  width: (54px + ($navbar-padding-horizontal * 2));
+  height: (20px + ($navbar-padding-vertical * 2));
+
+  background: asset-url("logo.png") no-repeat;
+  background-image: asset-url("logo.svg"), none;
+  background-position: center center;
+  background-size: 54px 22px;
+
+  opacity: 0.9999;
+
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.navbar-toggle {
+  margin-left: 15px;
+}
