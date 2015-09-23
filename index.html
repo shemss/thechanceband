@@ -7,8 +7,10 @@ layout: default
   {% for section in sections %}
   <div class="section" id="{{ section.title | downcase }}">
     <div class="sp-page sp-page-{{ section.title | downcase }}">
-      <div class="container">
-        {{ section.content }}
+      <div class="container-fluid">
+        <div class="container-fluid container-fluid-inner">
+          {{ section.content }}
+        </div>
       </div>
     </div>
   </div>

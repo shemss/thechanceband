@@ -1,0 +1,7 @@
+.container-fluid-inner {
+  max-width: $container-large-desktop;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0;
+  }
+}
