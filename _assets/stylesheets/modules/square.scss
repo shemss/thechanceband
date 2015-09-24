@@ -1,0 +1,16 @@
+.square {
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

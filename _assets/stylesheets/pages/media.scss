@@ -21,6 +21,8 @@
 }
 
 .gallery-thumb {
+  @extend .square;
+
   background-size: cover;
   background-position: center center;
   opacity: 0.99999;
@@ -30,12 +32,6 @@
   -ms-transition: opacity 0.75s;
   -o-transition: opacity 0.75s;
   transition: opacity 0.75s;
-
-  &:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
 }
 
 .gallery-title {
