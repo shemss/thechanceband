@@ -1,6 +1,17 @@
+.album {
+  position: relative;
+
+  > .img-responsive {
+    width: 100%;
+  }
+}
+
+.song-item {
+  position: static;
+}
+
 .song {
   @extend #music-toggle;
-  overflow: hidden;
 
   .list-inline {
     position: relative;
@@ -10,6 +21,13 @@
   &.playing .song-progress {
     display: block;
   }
+}
+
+.song-controls {
+  overflow: hidden;
+  position: relative;
+  margin: -10px -15px;
+  padding: 10px 15px;
 }
 
 .song-progress {
@@ -25,4 +43,38 @@
 .song-toggle {
   display: inline-block;
   min-width: 12px;
+}
+
+.lyrics {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  background: rgba(0,0,0,0.7);
+  color: $gray-lighter;
+  opacity: 0.00001;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .content {
+    overflow: hidden;
+    padding: 15px;
+  }
+}
+
+.song.playing .lyrics {
+  opacity: 0.99999999;
+
+  .content {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

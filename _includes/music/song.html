@@ -1,0 +1,47 @@
+<div class="song">
+  <div class="song-controls clearfix">
+    <div class="song-progress"></div>
+
+    <ul class="list-inline pull-left">
+      <li>
+        <audio class="song-audio" src="{{ baseurl }}/songs/{{ song.slug }}.mp3"></audio>
+        <a href="#" class="song-toggle" title="Play/Pause">
+          <span class="play">
+            <i class="fa fa-play"></i>
+            <span class="sr-only">Play</span>
+          </span>
+          <span class="pause">
+            <i class="fa fa-pause"></i>
+            <span class="sr-only">Pause</span>
+          </span>
+        </a>
+      </li>
+      <li>{{ song.title }}</li>
+    </ul>
+
+    <ul class="list-inline pull-right">
+      <li><a href="{{ baseurl }}/songs/{{ song.slug }}.mp3" title="Download">
+        <i class="fa fa-download"></i>
+        <span class="sr-only">Download</span>
+      </a></li>
+      <li><a href="{{ baseurl }}/inst/{{ song.slug }}.mp3" title="Instrumental">
+        <i class="fa fa-music"></i>
+        <span class="sr-only">Instrumental</span>
+      </a></li>
+      <li><a href="{{ baseurl }}/lyrics/{{ song.slug }}.pdf" title="Lyrics/Chords">
+        <i class="fa fa-file-text"></i>
+        <span class="sr-only">Lyrics/Chords</span>
+      </a></li>
+      <!-- <li>Share</li> -->
+    </ul>
+  </div>
+
+  <div class="lyrics">
+    <div class="square">
+      <div class="content">
+        <h4>{{ song.title }}</h4>
+        {{ song.content | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>

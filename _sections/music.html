@@ -5,49 +5,8 @@ position: 1
 
 <div class="row">
 {% for album in site.albums %}
-  {% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
   <div class="col-sm-6 col-lg-4">
-    <h3>{{ album.title }}</h3>
-    <img class="img-responsive" src="{{ baseurl }}/cover.jpg">
-    <ul class="list-group">
-    {% assign songs = site.songs | where: 'album', album.title | sort: 'position' %}
-    {% for song in songs %}
-      <li class="list-group-item song clearfix">
-        <div class="song-progress"></div>
-        <ul class="list-inline pull-left">
-          <li>
-            <audio class="song-audio" src="{{ baseurl }}/songs/{{ song.slug }}.mp3"></audio>
-            <a href="#" class="song-toggle" title="Play/Pause">
-              <span class="play">
-                <i class="fa fa-play"></i>
-                <span class="sr-only">Play</span>
-              </span>
-              <span class="pause">
-                <i class="fa fa-pause"></i>
-                <span class="sr-only">Pause</span>
-              </span>
-            </a>
-          </li>
-          <li>{{ song.title }}</li>
-        </ul>
-        <ul class="list-inline pull-right">
-          <li><a href="{{ baseurl }}/songs/{{ song.slug }}.mp3" title="Download">
-            <i class="fa fa-download"></i>
-            <span class="sr-only">Download</span>
-          </a></li>
-          <li><a href="{{ baseurl }}/inst/{{ song.slug }}.mp3" title="Instrumental">
-            <i class="fa fa-music"></i>
-            <span class="sr-only">Instrumental</span>
-          </a></li>
-          <li><a href="{{ baseurl }}/lyrics/{{ song.slug }}.pdf" title="Lyrics/Chords">
-            <i class="fa fa-file-text"></i>
-            <span class="sr-only">Lyrics/Chords</span>
-          </a></li>
-          <!-- <li>Share</li> -->
-        </ul>
-      </li>
-    {% endfor %}
-    </ul>
+    {% include music/album.html album=album %}
   </div>
 {% endfor %}
 </div>
