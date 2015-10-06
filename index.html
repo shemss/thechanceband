@@ -6,7 +6,13 @@ layout: default
   {% assign sections = site.sections | sort: 'position' %}
   {% for section in sections %}
   <div class="section" id="{{ section.title | downcase }}">
-    <div class="sp-page sp-page-{{ section.title | downcase }}">
+    <div class="sp-page sp-page-{{ section.title | downcase }}"
+      {% if section.bg %}
+        {% assign image = section.title | downcase %}
+        {% assign args = '[resize:>1920x1080^]' %}
+        {% capture bg %}pages/{{ image }}.jpg {{ args }}{% endcapture %}
+        style="background-image:url('{{ bg | asset_path }}');"
+      {% endif %}>
       <div class="container-fluid">
         <div class="container-fluid container-fluid-inner">
           {{ section.content }}
