@@ -1,15 +1,16 @@
-{% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
-
 <h3>{{ album.title }}</h3>
 
 <div class="album">
-  <img class="img-responsive" src="{{ baseurl }}/cover.jpg">
+  {% assign attrs = 'class="img-responsive"' %}
+  {% capture cover %}albums/{{ album.slug }}.jpg {{ attrs }}{% endcapture %}
+  {{ cover | image }}
 
+  {% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
   <ul class="list-group">
   {% assign songs = site.songs | where: 'album', album.title | sort: 'position' %}
   {% for song in songs %}
     <li class="list-group-item song-item">
-      {% include music/song.html song=song %}
+      {% include music/song.html %}
     </li>
   {% endfor %}
   </ul>
