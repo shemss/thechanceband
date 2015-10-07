@@ -1,0 +1,56 @@
+.members {
+  margin: 30px 0;
+}
+
+.band, .member {
+  @extend .square;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.member .content {
+  padding: 30px;
+}
+
+.band:before    { padding-top: 66.66666666667%; }
+.member:before  { padding-top: 62.5%; }
+
+@media (min-width: $screen-md-min) {
+  .member:before { padding-top: 50%; }
+}
+
+
+.band-info {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  padding: 30px;
+
+  @media (min-width: $screen-sm-min) {
+    color: #fff;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .band, .member {
+    .content, .band-info {
+      position: static;
+      background: #fff;
+      padding: 0;
+    }
+  }
+
+  .member.even {
+    background-position: top right;
+  }
+
+  .band {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

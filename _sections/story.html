@@ -13,6 +13,14 @@ members:
     inspiration began when I gave my life to Christ; He led me
     through my darkest times. For me a song is like a cry from the
     heart. When thoughts hit my hands I start writing and composing.
+- name: Aleksey Kapakly
+  bio: >
+    I’m from Odessa Ukraine. That's where Jesus Christ first found me
+    and I promised to be faithful to Him. Also He gave me love for
+    music and thankfully my closest friends, my brothers already
+    started playing guitars and that's how our band started. Our goal
+    is that His name will be praised through these songs and at least
+    one soul would be touched by it.
 - name: Vadim Kapakly
   bio: >
     I was born in Odessa, Ukraine. Music was always the life changing
@@ -29,44 +37,42 @@ members:
     Serg, Vadim and Aleksey formed a music band and have invited me
     to join. Since then we are still together with one goal and one
     destiny to be an encouragement to the world.
-- name: Aleksey Unknown
-  bio: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-    sunt in culpa qui officia deserunt mollit anim id est laborum.
 ---
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title">Our Story</h2>
-  </div>
-
-  <div class="panel-body">
-    The “Chance” band began its journey in 1996. Through their music
-    they led many hearts to Christ. They use their lyrics to inspire
-    the young generation of today’s times. Each and every one of the
-    group member’s dedicated their hearts and souls to God. They formed
-    an alliance between one another and brought their talents together
-    to form something bigger than just a band but a brotherly
-    friendship. Take the Chance and listen.
+{% assign photo = 'story/band.jpg [resize:>1980x1280]' %}
+<div class="band" style="background-image:url({{ photo | asset_path }})">
+  <div class="content">
+    <div class="band-info">
+      <h2>Our Story</h2>
+      <p>
+        The “Chance” band began its journey in 1996. Through their music
+        they led many hearts to Christ. They use their lyrics to inspire
+        the young generation of today’s times. Each and every one of the
+        group member’s dedicated their hearts and souls to God. They formed
+        an alliance between one another and brought their talents together
+        to form something bigger than just a band but a brotherly
+        friendship. Take the Chance and listen.
+      </p>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  {% for member in page.members %}
-  <div class="col-sm-6 col-md-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{ member.name }}</h3>
-      </div>
-      <div class="panel-body">
-        {{ member.bio }}
+
+<div class="members">
+{% for member in page.members %}
+  {% assign filename = member.name | split:' ' | first | downcase %}
+  {% assign args = [resize:>1920x1200] %}
+  {% capture photo %}story/{{ filename }}.jpg {{ args }}{% endcapture %}
+  <div class="member {% cycle 'odd','even' %}"
+    style="background-image:url({{ photo | asset_path }})">
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-6{% cycle ' col-sm-offset-6','' %}">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.bio }}</p>
+        </div>
       </div>
     </div>
   </div>
-  {% endfor %}
+{% endfor %}
 </div>
