@@ -177,3 +177,93 @@
   -ms-transform: rotate(-90deg) translateX(50px);
   transform: rotate(-90deg) translateX(50px);
 }
+
+// Slide navbar-collapse
+@media (max-width: $screen-xs-max) {
+  .navbar-collapse {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    border: 0;
+
+    -webkit-transition: max-height 0.85s;
+    transition: max-height 0.85s;
+
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
+
+    .navbar-nav > li {
+      opacity: 0.25;
+      -webkit-transform: translate(-10px, -15px);
+      -ms-transform: translate(-10px, -15px);
+      transform: translate(-10px, -15px);
+
+      -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+      transition: transform 0.6s, opacity 0.6s;
+
+      &:nth-child(1) {
+        -webkit-transition-delay: 0.25s;
+        transition-delay: 0.25s;
+      }
+      &:nth-child(2) {
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        -webkit-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+      }
+      &:nth-child(4) {
+        -webkit-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+      }
+      &:nth-child(5) {
+        -webkit-transition-delay: 0.05s;
+        transition-delay: 0.05s;
+      }
+      &:nth-child(6) {
+        -webkit-transition-delay: 0;
+        transition-delay: 0;
+      }
+    }
+
+    &.in {
+      max-height: 260px;
+
+      -webkit-transition-delay: 0;
+      transition-delay: 0;
+
+      .navbar-nav > li {
+        opacity: 1;
+        -webkit-transform: translate(0,0);
+        -ms-transform: translate(0,0);
+        transform: translate(0,0);
+
+        &:nth-child(1) {
+          -webkit-transition-delay: 0;
+          transition-delay: 0;
+        }
+        &:nth-child(2) {
+          -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+        }
+        &:nth-child(3) {
+          -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+        }
+        &:nth-child(4) {
+          -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+        }
+        &:nth-child(5) {
+          -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+        }
+        &:nth-child(6) {
+          -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+        }
+      }
+    }
+  }
+}
