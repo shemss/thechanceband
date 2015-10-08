@@ -58,7 +58,7 @@
 
 .navbar-default, .navbar-inverse {
   .navbar-toggle {
-    &, &:hover, &:active {
+    &, &:hover, &:active, &:focus {
       background: transparent;
     }
   }
