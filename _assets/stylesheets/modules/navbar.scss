@@ -1,3 +1,8 @@
+.navbar-inverse {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .navbar-header {
   position: relative;
 }
@@ -40,16 +45,135 @@
   transition: color 0.5s;
 }
 
+// Apple-esque toggle
 .navbar-toggle {
-  .icon-bar {
-    -webkit-transition: background-color 0.5s;
-    -moz-transition: background-color 0.5s;
-    -ms-transition: background-color 0.5s;
-    -o-transition: background-color 0.5s;
-    transition: background-color 0.5s;
-  }
+  margin: 3px;
+  padding: 0;
+  border: 0;
+}
 
-  &:hover .icon-bar {
-    background-color: $navbar-inverse-link-hover-color;
+.navbar-default, .navbar-inverse {
+  .navbar-toggle {
+    &, &:hover, &:active {
+      background: transparent;
+    }
   }
+}
+
+.navbar-toggle-inner {
+  display: block;
+  z-index: 3;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-tap-highlight-color: transparent
+}
+
+.navbar-toggle[aria-expanded='true'] .navbar-toggle-inner {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.icon-bar-wrapper {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
+}
+
+.icon-bar-wrapper-top {
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+  z-index: 4
+}
+
+.navbar-toggle[aria-expanded='true'] .icon-bar-wrapper-top {
+  -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.icon-bar-wrapper-bottom {
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0)
+}
+
+.navbar-toggle[aria-expanded='true'] .icon-bar-wrapper-bottom {
+  -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.icon-bar {
+  position: absolute;
+  left: 11px;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+}
+
+.icon-bar-top {
+  top: 21px;
+  -webkit-transition: -webkit-transform 0.2s 0.2s;
+  transition: transform 0.2s 0.2s;
+  -webkit-transform: translateY(-7px);
+  -ms-transform: translateY(-7px);
+  transform: translateY(-7px);
+}
+
+.navbar-toggle[aria-expanded='true'] .icon-bar-top {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
+
+.icon-bar-bottom {
+  bottom: 21px;
+  -webkit-transform: translateY(7px);
+  -ms-transform: translateY(7px);
+  transform: translateY(7px);
+}
+
+.navbar-toggle[aria-expanded='true'] .icon-bar-bottom {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.icon-bar-middle {
+  top: 50%;
+  margin-top: -1px;
+  -webkit-transition: opacity 0.6s,
+    -webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: opacity 0.6s,
+    transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.navbar-toggle[aria-expanded='true'] .icon-bar-middle {
+  opacity: 0;
+  -webkit-transform: rotate(-90deg) translateX(50px);
+  -ms-transform: rotate(-90deg) translateX(50px);
+  transform: rotate(-90deg) translateX(50px);
 }
