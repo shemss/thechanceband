@@ -39,34 +39,16 @@ members:
     destiny to be an encouragement to the world.
 ---
 
-<div class="band">
-  <h2 class="visible-xs">Our Story</h2>
-  <img src="{% asset_path story/band.jpg [resize:>1152x768] %}"
-    srcset="
-      {% asset_path story/band.jpg [resize:>290x194] %} 290w,
-      {% asset_path story/band.jpg [resize:>477x318] %} 477w,
-      {% asset_path story/band.jpg [resize:>816x544] %} 816w,
-      {% asset_path story/band.jpg [resize:>1152x768] %} 1152w,
-      {% asset_path story/band.jpg [resize:>1614x1077] %} 1614w,
-      {% asset_path story/band.jpg [resize:>2280x1522] %} 2280w,
-      {% asset_path story/band.jpg [resize:>3000x2002] %} 3000w"
-    sizes="
-      (max-width: 669px) calc(100vw - 30px),
-      (max-width: 1199px) calc(100vw - 60px), 1140px"
-    alt="Chance Band" class="img-responsive">
-  <div class="band-info">
-    <h2 class="hidden-xs">Our Story</h2>
-    <p>
-      The “Chance” band began its journey in 1996. Through their music
-      they led many hearts to Christ. They use their lyrics to inspire
-      the young generation of today’s times. Each and every one of the
-      group member’s dedicated their hearts and souls to God. They formed
-      an alliance between one another and brought their talents together
-      to form something bigger than just a band but a brotherly
-      friendship. Take the Chance and listen.
-    </p>
-  </div>
-</div>
+<h2>Our Story</h2>
+<p>
+  The “Chance” band began its journey in 1996. Through their music
+  they led many hearts to Christ. They use their lyrics to inspire
+  the young generation of today’s times. Each and every one of the
+  group member’s dedicated their hearts and souls to God. They formed
+  an alliance between one another and brought their talents together
+  to form something bigger than just a band but a brotherly
+  friendship. Take the Chance and listen.
+</p>
 
 <div class="members">
   <div class="row">
@@ -77,7 +59,6 @@ members:
     {% capture photo %}story/{{ filename }}.jpg {{ args }}{% endcapture %}
     <div class="col-sm-6 col-md-3">
       <div class="member">
-      <h3>{{ member.name }}</h3>
         <p>
           <img src="{{ photo | asset_path }}"
             srcset="
@@ -92,6 +73,7 @@ members:
               (max-width: 1199px) calc(25vw - 45px), 263px"
             alt="{{ member.name }}" class="img-responsive">
         </p>
+        <h3>{{ member.name }}</h3>
         <p class="member-bio">{{ member.bio }}</p>
       </div>
     </div>
