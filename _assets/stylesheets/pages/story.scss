@@ -1,34 +1,27 @@
 .members {
-  margin: 30px 0;
+  margin-bottom: 30px;
 }
 
 .band, .member {
-  @extend .square;
-  background-size: cover;
-  margin-bottom: 20px;
+  .img-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 
-.member .content {
-  padding: 30px;
-}
+@media (min-width: $screen-sm-min) {
+  .band {
+    position: relative;
+  }
 
-.band:before    { padding-top: 66.66666666667%; }
-.member:before  { padding-top: 62.5%; }
+  .band-info {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 30px;
 
-@media (min-width: $screen-md-min) {
-  .member:before { padding-top: 50%; }
-}
-
-
-.band-info {
-  background: rgba(0,0,0,0.5);
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  margin: 0;
-  padding: 30px;
-
-  @media (min-width: $screen-sm-min) {
     color: #fff;
 
     -webkit-font-smoothing: antialiased;
@@ -36,21 +29,8 @@
   }
 }
 
-@media (max-width: $screen-xs-max) {
-  .band, .member {
-    .content, .band-info {
-      position: static;
-      background: #fff;
-      padding: 0;
-    }
-  }
-
-  .member.even {
-    background-position: top right;
-  }
-
-  .band {
-    background-size: contain;
-    background-repeat: no-repeat;
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .member-bio {
+    min-height: 220px;
   }
 }
