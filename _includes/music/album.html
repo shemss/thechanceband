@@ -1,9 +1,21 @@
 <h3>{{ album.title }}</h3>
 
 <div class="album">
-  {% assign attrs = 'class="img-responsive"' %}
-  {% capture cover %}albums/{{ album.slug }}.jpg {{ attrs }}{% endcapture %}
-  {{ cover | image }}
+  {% assign resolutions = '290 360 580 720 870 1080' | split:' ' %}
+  {% assign args = '[resize:>360x360]' %}
+  {% capture cover %}albums/{{ album.slug }}.jpg {{ args }}{% endcapture %}
+  <img src="{{ cover | asset_path }}"
+    srcset="
+    {% for res in resolutions %}
+      {% capture args %}[resize:>{{ res }}x{{ res }}]{% endcapture %}
+      {% capture cover %}albums/{{ album.slug }}.jpg {{ args }}{% endcapture %}
+      {{ cover | asset_path }} {{ res }}w,
+    {% endfor %}"
+    sizes="
+      (max-width: 669px) calc(100vw - 30px),
+      (max-width: 1139px) calc(50vw - 45px),
+      (max-width: 1199px) calc(33vw - 45px), 360px"
+    alt="{{ member.name }}" class="img-responsive">
 
   {% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
   <ul class="list-group">
