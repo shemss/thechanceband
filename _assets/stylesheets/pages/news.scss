@@ -1,5 +1,16 @@
 $avatar-margin: 48px + (15px * 2);
 
+.news-title {
+  color: #fff;
+}
+
+.news-more {
+  margin-bottom: 30px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+
+  a, a:link, a:visited { color: #fff; }
+}
+
 #twitter-feed {
   > ul {
     @extend .list-unstyled;
@@ -10,6 +21,7 @@ $avatar-margin: 48px + (15px * 2);
       @extend .clearfix;
       padding: 15px;
       padding-left: $avatar-margin;
+      background-color: rgba(255,255,255,0.9);
     }
   }
 
