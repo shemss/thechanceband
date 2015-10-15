@@ -5,5 +5,6 @@
 //= require ./bootstrap
 //= require news
 //= require nav
+//= require fullpage
 //= require player
 //= require lightbox
