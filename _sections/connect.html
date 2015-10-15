@@ -2,4 +2,57 @@
 title: Connect
 position: 5
 bg: true
+form_token: 03122f437ac71e8d9c54ef3a0012b2fb
 ---
+
+<h2 class="heading-alt">Connect</h2>
+
+<ul class="connect-social">
+  {% for social in site.social %}
+    <li><a href="{{ social[1] }}" target="_blank" class="square">
+      <div class="content">
+        <i class="fa fa-{{ social[0] }} fa-5x"></i>
+      </div>
+    </a></li>
+  {% endfor %}
+  <li><a href="mailto:{{ site.email }}" class="square">
+    <div class="content">
+      <i class="fa fa-envelope fa-5x"></i>
+    </div>
+  </a></li>
+</ul>
+
+<form accept-charset="UTF-8" class="connect-form" method="post"
+  action="http://fh.hypernovastudio.com/{{ page.form_token }}">
+  <div style="margin:0;padding:0;display:inline">
+    <input name="utf8" type="hidden" value="✓">
+  </div>
+
+  <h3 class="heading-alt">Send us a Message</h3>
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="name">
+      <abbr title="required">*</abbr> Name</label>
+    <input class="form-control" id="name" name="name" type="text"
+      placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="email">Email</label>
+    <input class="form-control" id="email" name="email" type="email"
+      placeholder="Email">
+  </div>
+
+  <div class="form-group">
+    <label class="control-label sr-only" for="message">
+      Message</label>
+    <textarea class="form-control" id="message" name="message" rows="10"
+      placeholder="Message"></textarea>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">
+      Send Message</button>
+  </div>
+</form>
+

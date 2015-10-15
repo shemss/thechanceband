@@ -1,0 +1,89 @@
+.sp-page-connect .container-fluid-inner {
+  max-width: 720px;
+}
+
+.connect-social {
+  @extend .clearfix;
+
+  margin: 20px -5px;
+  padding: 0;
+
+  li {
+    list-style: none;
+    float: left;
+    padding: 0 5px;
+    margin-bottom: 10px;
+    width: 33.3333333%;
+
+    @media (min-width: 600px) {
+      width: 16.66666666667%;
+    }
+
+    a {
+      display: block;
+      background: rgba(40,40,40,0.6);
+      width: 100%;
+      text-align: center;
+      position: relative;
+      color: #fff;
+
+      -webkit-transition: background 0.5s;
+      -moz-transition: background 0.5s;
+      -ms-transition: background 0.5s;
+      -o-transition: background 0.5s;
+      transition: background 0.5s;
+
+      .fa {
+        -webkit-transition: color 0.5s;
+        -moz-transition: color 0.5s;
+        -ms-transition: color 0.5s;
+        -o-transition: color 0.5s;
+        transition: color 0.5s;
+      }
+
+      &:hover {
+        background: rgba(10,10,10,0.7);
+
+        .fa-facebook    { color: #3b5998; }
+        .fa-twitter     { color: #55acee; }
+        .fa-youtube     { color: #cd201f; }
+        .fa-google-plus { color: #dc4e41; }
+        .fa-pinterest   { color: #bd081c; }
+        .fa-envelope    { color: #ccc; }
+      }
+
+      .content {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 50%;
+        margin-top: -32px;
+      }
+    }
+  }
+}
+
+.form-control {
+  background: rgba(40,40,40,0.9);
+  border: 0;
+  color: #fff;
+
+  -webkit-transition: box-shadow ease-in-out 0.5s,
+                      background ease-in-out 0.5s,
+                      color ease-in-out 0.5s;
+       -o-transition: box-shadow ease-in-out 0.5s,
+                      background ease-in-out 0.5s,
+                      color ease-in-out 0.5s;
+          transition: box-shadow ease-in-out 0.5s,
+                      background ease-in-out 0.5s,
+                      color ease-in-out 0.5s;
+
+  &:focus {
+    background-color: #fff;
+    color: #222;
+  }
+}
+
+.btn {
+  border: 0;
+}
