@@ -26,7 +26,7 @@
         {% assign sections = site.sections | sort: 'position' %}
         {% for section in sections %}
           <li>
-            <a href="#{{ section.title | downcase }}">
+            <a href="/#{{ section.title | downcase }}">
               {{ section.title }}
             </a>
           </li>
