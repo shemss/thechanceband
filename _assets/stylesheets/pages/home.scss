@@ -1,0 +1,15 @@
+#cfp {
+  max-width: 290px;
+
+  .carousel-indicators {
+    bottom: -20px;
+
+    li {
+      background-color: #ddd;
+
+      &.active {
+        background-color: $brand-primary;
+      }
+    }
+  }
+}
