@@ -20,6 +20,13 @@
   &:hover {
     opacity: 0.5;
   }
+
+  @media (min-width: $screen-md-min) {
+    text-indent: (54px + ($navbar-padding-horizontal / 2));
+    width: auto;
+    background-position: $navbar-padding-horizontal center;
+    text-transform: uppercase;
+  }
 }
 
 .navbar-toggle {

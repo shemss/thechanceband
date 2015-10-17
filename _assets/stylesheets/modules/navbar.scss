@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-@media (min-width: 885px) {
+@media (min-width: $screen-lg-min) {
   .navbar-center {
     margin: 0 auto;
     display: table;
