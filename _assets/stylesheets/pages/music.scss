@@ -75,6 +75,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  pointer-events: none;
+
   .content {
     overflow: hidden;
     padding: 15px;
@@ -83,6 +85,7 @@
 
 .song.playing .lyrics {
   opacity: 0.99999999;
+  pointer-events: auto;
 
   .content {
     overflow: auto;
