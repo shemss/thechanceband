@@ -8,10 +8,21 @@
 
 .song-item {
   position: static;
+  background: rgba(255,255,255,0.75);
+  border: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  &:last-child .song {
+    border-bottom: 0;
+  }
 }
 
 .song {
   @extend #music-toggle;
+
+  padding-bottom: 10px;
+  border-bottom: solid 1px rgba(0,0,0,0.05);
 
   .list-inline {
     position: relative;
