@@ -53,6 +53,7 @@ gallery:
     {% assign image_222 = image_full | append: ' [resize:>222x222^]' %}
     {% assign image_444 = image_full | append: ' [resize:>444x444^]' %}
     {% assign image_666 = image_full | append: ' [resize:>666x666^]' %}
+    {% assign image_2000 = image_full | append: ' [resize:>2000x2000]' %}
     <style>
       .gallery-thumb-{{ item.image | split:'.' | first }} {
         background-image: url("{{ image_222 | asset_path }}");
@@ -64,7 +65,7 @@ gallery:
       }
     </style>
     <a class="gallery-item lightbox" rel="gallery"
-      href="{{ image_full | asset_path }}" title="{{ item.title }}">
+      href="{{ image_2000 | asset_path }}" title="{{ item.title }}">
       <div class="gallery-thumb gallery-thumb-{{ item.image | split:'.' | first }}"></div>
       <p class="gallery-title">{{ item.title }}</p>
     </a>
