@@ -13,7 +13,7 @@ setupFullpage = ->
 
 
 initFP = ->
-  $(window).resize(setupFullpage).resize()
+  $(window).load(setupFullpage).resize(setupFullpage).resize()
   fixiOSBackgroundPosition()
 
 
