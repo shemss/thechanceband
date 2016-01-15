@@ -1,6 +1,8 @@
 ---
-layout: default
 ---
-
-{% assign sections = site.sections | sort: 'position' %}
-{% include sections.html %}
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>{{ site.en.title }} | {{ site.ru.title }}</title>
+<script>var baseurl = '{{ site.baseurl }}';</script>
+{% javascript redirect %}
+<noscript><meta http-equiv="refresh" content="0; url={{ site.baseurl }}/en/"></noscript>

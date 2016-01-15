@@ -1,6 +1,7 @@
 //= require vendor/jquery-1.11.1
 //= require vendor/jquery.scrollTo
 //= require vendor/jquery.fancybox
+//= require vendor/jquery.cookie
 //= require vendor/twitterFetcher
 //= require ./bootstrap
 //= require news
@@ -8,3 +9,4 @@
 //= require fullpage
 //= require player
 //= require lightbox
+//= require lang

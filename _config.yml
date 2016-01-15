@@ -1,10 +1,17 @@
 # Site settings
-title: Chance
+en:
+  title: Chance
+  description: >
+    Chance began its journey in 1996. As a group they led many hearts
+    to Christ. They use their lyrics to inspire the young generation
+    of today’s times. Take the Chance and listen.
+
+ru:
+  title: Шанс
+  description: >
+    Шанс – Клевая группа
+
 email: chancebandmusic@gmail.com
-description: >
-  Chance began its journey in 1996. As a group they led many hearts
-  to Christ. They use their lyrics to inspire the young generation
-  of today’s times. Take the Chance and listen.
 baseurl: ""
 url: "https://www.thechanceband.com"
 

@@ -1,8 +1,13 @@
 navigateTo = ($section) ->
   sectionId = $section.attr('id')
   $section.attr('id', '')
-  location.replace '/#'+sectionId
+  location.replace '#'+sectionId
   $section.attr('id', sectionId)
+
+  $('.lang-links a').each ->
+    $link = $(this)
+    $link.attr('href',
+      [$link.attr('href').split('#')[0], sectionId].join('#'))
 
 
 scrollSpyEnd = ->
@@ -13,7 +18,7 @@ scrollSpyEnd = ->
     if $section.offset().top < ($(window).scrollTop() + 40)
       $destination = $section
 
-  $("#site-navbar a[href='/##{$destination.attr('id')}']")
+  $("#site-navbar a[href='##{$destination.attr('id')}']")
   .parent().addClass('active')
   .siblings().removeClass('active')
 
@@ -27,9 +32,9 @@ scrollSpy = ->
 
 
 initScroll = ->
-  $('#site-navbar a').click (e) ->
+  $('#site-navbar .navbar-center a, .navbar-brand').click (e) ->
     e.preventDefault()
-    $(window).scrollTo($(this).attr('href').slice(1), 500)
+    $(window).scrollTo($(this).attr('href'), 500)
 
   $(window).scroll(scrollSpy).scroll()
 
