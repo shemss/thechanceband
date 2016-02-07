@@ -1,0 +1,67 @@
+.navbar-header,
+.navbar-collapse {
+  .lang-links {
+    float: right;
+
+    > li {
+      float: left;
+
+      > a {
+        font-size: 12px;
+
+        &:before {
+          content: "|";
+          margin-right: 7px;
+        }
+      }
+
+      &:first-child > a {
+        padding-right: 7px;
+
+        &:before {
+          content: none;
+        }
+      }
+
+      &:last-child > a {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.navbar-header .lang-links {
+  @media (max-width: 479px)                   { display: none; }
+  @media (min-width: $grid-float-breakpoint)  { display: none; }
+
+  margin: 5px 0;
+}
+
+.navbar-collapse {
+  @media (min-width: 480px) and (max-width: $grid-float-breakpoint-max) {
+    .lang-links { display: none; }
+  }
+
+  @media (max-width: 479px) {
+    .lang-links {
+      padding-left: 0;
+      padding-bottom: 0;
+      position: relative;
+      z-index: 1;
+
+      > li {
+        border-bottom: 0;
+      }
+    }
+
+    @media (min-height: 441px) {
+      &.in {
+        max-height: 441px;
+      }
+
+      .navbar-center {
+        padding-top: 36px;
+      }
+    }
+  }
+}

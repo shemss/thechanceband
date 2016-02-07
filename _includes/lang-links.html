@@ -1,0 +1,8 @@
+<ul class="nav navbar-nav navbar-right lang-links">
+  {% assign languages = 'en,ru' | split: ',' %}
+  {% for lang in languages %}
+    <li{% if lang == page.lang %} class="active"{% endif %}>
+      <a href="/{{ lang }}/">{{ lang | upcase }}</a>
+    </li>
+  {% endfor %}
+</ul>
