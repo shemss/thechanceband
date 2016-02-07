@@ -24,7 +24,7 @@ $logo-height: 17px;
     opacity: 0.5;
   }
 
-  @media (min-width: 878px) {
+  @media (min-width: 892px) {
     text-indent: ($logo-width + ($navbar-padding-horizontal / 2));
     width: auto;
     background-position: $navbar-padding-horizontal center;
