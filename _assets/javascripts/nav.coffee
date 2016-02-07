@@ -48,3 +48,10 @@ initNav = ->
 
 
 $ initNav
+
+
+# Bootstrap navbar mods
+$ ->
+  navMain = $("#site-navbar")
+  navMain.on 'click', 'a', null, ->
+    navMain.collapse('hide')
