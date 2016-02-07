@@ -44,6 +44,10 @@ initNav = ->
     offset:
       top: -> $(window).height() - $('.navbar-affix').outerHeight()
 
+  $('.lang-links a').click (e) ->
+    e.preventDefault()
+    location.replace $(this).attr('href')
+
   initScroll()
 
 
