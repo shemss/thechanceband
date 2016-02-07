@@ -1,13 +1,16 @@
+$logo-width: 41px;
+$logo-height: 17px;
+
 .navbar-brand {
   text-indent: -100000px;
 
-  width: (54px + ($navbar-padding-horizontal * 2));
+  width: ($logo-width + ($navbar-padding-horizontal * 2));
   height: (20px + ($navbar-padding-vertical * 2));
 
   background: asset-url("logo.png") no-repeat;
   background-image: asset-url("logo.svg"), none;
   background-position: center center;
-  background-size: 54px 22px;
+  background-size: $logo-width $logo-height;
 
   opacity: 0.9999;
 
@@ -22,7 +25,7 @@
   }
 
   @media (min-width: $screen-md-min) {
-    text-indent: (54px + ($navbar-padding-horizontal / 2));
+    text-indent: ($logo-width + ($navbar-padding-horizontal / 2));
     width: auto;
     background-position: $navbar-padding-horizontal center;
     text-transform: uppercase;
