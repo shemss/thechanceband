@@ -11,16 +11,12 @@
   overflow: hidden;
 }
 
-@media (min-width: $screen-lg-min) {
+@media (min-width: $grid-float-breakpoint) {
   .navbar-center {
     margin: 0 auto;
     display: table;
     table-layout: fixed;
     float:none;
-  }
-
-  .navbar-header {
-    position: absolute;
   }
 }
 
@@ -183,7 +179,7 @@
 }
 
 // Slide navbar-collapse
-@media (max-width: $screen-xs-max) {
+@media (max-width: $grid-float-breakpoint-max) {
   .navbar-inverse {
     background-color: transparent;
   }

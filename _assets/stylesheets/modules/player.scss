@@ -13,7 +13,7 @@
     text-align: center;
   }
 
-  @media (max-width: $screen-xs-max) {
+  @media (max-width: $grid-float-breakpoint-max) {
     margin: 0;
     padding-top: 5px;
 
@@ -23,7 +23,7 @@
     }
   }
 
-  @media (min-width: $screen-sm-min) {
+  @media (min-width: $grid-float-breakpoint) {
     position: relative;
   }
 }
