@@ -1,0 +1,25 @@
+---
+position: 2
+raw: true
+---
+
+{% for album in site.albums %}
+  {% include section-css.html section=album %}
+  <div class="section">
+    <div class="sp-page sp-page-{{ album.name.en | downcase }}">
+      <div class="container-fluid">
+        <div class="container-fluid container-fluid-inner">
+          <div class="row">
+            <div class="col-sm-6 col-lg-8">
+              {{ album.content }}
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              {% include music/album.html %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+

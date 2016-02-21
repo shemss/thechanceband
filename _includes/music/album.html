@@ -13,11 +13,11 @@
       (max-width: 669px) calc(100vw - 30px),
       (max-width: 1139px) calc(50vw - 45px),
       (max-width: 1199px) calc(33vw - 45px), 360px"
-    alt="{{ album.title }}" class="img-responsive">
+    alt="{{ album.name[page.lang] }}" class="img-responsive">
 
   {% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
   <ul class="list-group">
-  {% assign songs = site.songs | where: 'album', album.title | sort: 'position' %}
+  {% assign songs = site.songs | where: 'album', album.name[page.lang] | sort: 'position' %}
   {% for song in songs %}
     <li class="list-group-item song-item">
       {% include music/song.html %}
