@@ -1,0 +1,50 @@
+{% if include.section.bg %}
+  {% capture bg %}pages/{{ include.section.name.en | downcase }}.jpg{% endcapture %}
+  {% assign bg_480 = bg | append: ' [resize:>480x480^]' %}
+  {% assign bg_960 = bg | append: ' [resize:>960x960^]' %}
+  {% assign bg_1140 = bg | append: ' [resize:>1140x1140^]' %}
+  {% assign bg_1920 = bg | append: ' [resize:>1920x1920^]' %}
+  {% assign bg_2280 = bg | append: ' [resize:>2280x2280^]' %}
+  {% assign bg_2880 = bg | append: ' [resize:>2880x2880^]' %}
+  <style>
+    @media (max-width: 480px) {
+      .sp-page-{{ include.section.name.en | downcase }} {
+        background-image: url("{{ bg_480 | asset_path }}");
+        background-image: -webkit-image-set(
+          url("{{ bg_480 | asset_path }}") 1x,
+          url("{{ bg_960 | asset_path }}") 2x,
+          url("{{ bg_1140 | asset_path }}") 3x
+        );
+      }
+    }
+    @media (min-width: 481px) and (max-width: 960px) {
+      .sp-page-{{ include.section.name.en | downcase }} {
+        background-image: url("{{ bg_960 | asset_path }}");
+        background-image: -webkit-image-set(
+          url("{{ bg_960 | asset_path }}") 1x,
+          url("{{ bg_1920 | asset_path }}") 2x,
+          url("{{ bg_2880 | asset_path }}") 3x
+        );
+      }
+    }
+    @media (min-width: 961px) and (max-width: 1140px) {
+      .sp-page-{{ include.section.name.en | downcase }} {
+        background-image: url("{{ bg_1140 | asset_path }}");
+        background-image: -webkit-image-set(
+          url("{{ bg_1140 | asset_path }}") 1x,
+          url("{{ bg_2280 | asset_path }}") 2x,
+          url("{{ bg_2880 | asset_path }}") 3x
+        );
+      }
+    }
+    @media (min-width: 1141px) {
+      .sp-page-{{ include.section.name.en | downcase }} {
+        background-image: url("{{ bg_2280 | asset_path }}");
+        background-image: -webkit-image-set(
+          url("{{ bg_2280 | asset_path }}") 1x,
+          url("{{ bg_2880 | asset_path }}") 2x
+        );
+      }
+    }
+  </style>
+{% endif %}

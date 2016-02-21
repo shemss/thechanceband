@@ -28,6 +28,7 @@
       <ul class="nav navbar-nav navbar-center">
         {% assign sections = site.sections | sort: 'position' %}
         {% for section in sections %}
+        {% if section.noid or section.raw %}{% continue %}{% endif %}
           <li>
             <a href="#{{ section.name.en | downcase }}">
               {{ section.name[page.lang] }}

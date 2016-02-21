@@ -13,7 +13,7 @@ navigateTo = ($section) ->
 scrollSpyEnd = ->
   $destination = null
 
-  $('#fullpage .section').each ->
+  $('#fullpage .section[id]').each ->
     $section = $(this)
     if $section.offset().top < ($(window).scrollTop() + 40)
       $destination = $section
