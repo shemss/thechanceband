@@ -1,0 +1,63 @@
+body, label,
+.radio label,
+.checkbox label,
+.dropdown-menu > li > a {
+  font-weight: 300;
+}
+
+h4, .h4,
+h3 small,
+.h3 small {
+  -webkit-font-smoothing: antialiased;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Helvetica Neue", sans-serif-light, Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+
+h1, .h1,
+h2, .h2 {
+  small {
+    font-weight: 100;
+  }
+}
+
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  small {
+    font-family: "Helvetica Neue", sans-serif-light, Helvetica, Arial, sans-serif;
+    font-weight: 200;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: ($line-height-computed * 1.65);
+  margin-bottom: ($line-height-computed * 0.65);
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: ($line-height-computed * 0.85);
+  margin-bottom: ($line-height-computed * 0.65);
+}
+
+// @media (max-width: $screen-xs-max) {
+//   h1, .h1 { font-size: ($font-size-h1 * 0.9); }
+//   h2, .h2 { font-size: ($font-size-h2 * 0.9); }
+//   h3, .h3 { font-size: ($font-size-h3 * 0.9); }
+//   h4, .h4 { font-size: ($font-size-h4 * 0.9); }
+//   h5, .h5 { font-size: ($font-size-h5 * 0.9); }
+//   h6, .h6 { font-size: ($font-size-h6 * 0.9); }
+
+//   .page-header {
+//     margin-top: $line-height-computed;
+//   }
+// }
