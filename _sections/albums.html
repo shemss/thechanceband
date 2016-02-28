@@ -10,10 +10,12 @@ raw: true
       <div class="container-fluid">
         <div class="container-fluid container-fluid-inner">
           <div class="row">
-            <div class="col-sm-6 col-lg-8">
-              {{ album.content }}
+            <div class="col-md-7 col-lg-8">
+              <div class="jumbotron text-inverse text-center">
+                {{ album.content }}
+              </div>
             </div>
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-md-5 col-lg-4">
               {% include music/album.html %}
             </div>
           </div>
