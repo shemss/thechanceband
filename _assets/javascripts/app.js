@@ -10,3 +10,4 @@
 //= require player
 //= require lightbox
 //= require lang
+//= require more
