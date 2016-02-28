@@ -18,7 +18,7 @@ scrollSpyEnd = ->
     if $section.offset().top < ($(window).scrollTop() + 40)
       $destination = $section
 
-  $("#site-navbar a[href='##{$destination.attr('id')}']")
+  $("#site-navbar a[href='##{$destination.data('target') || $destination.attr('id')}']")
   .parent().addClass('active')
   .siblings().removeClass('active')
 

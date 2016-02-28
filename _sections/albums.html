@@ -5,7 +5,7 @@ raw: true
 
 {% for album in site.albums %}
   {% include section-css.html section=album %}
-  <div class="section">
+  <div class="section" id="music-{{ album.name.en | downcase }}" data-target="music">
     <div class="sp-page sp-page-{{ album.name.en | downcase }}">
       <div class="container-fluid">
         <div class="container-fluid container-fluid-inner">
