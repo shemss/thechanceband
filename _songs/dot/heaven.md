@@ -1,7 +1,7 @@
 ---
 title: Небо
 position: 2
-album: Точка
+album: Dot
 slug: heaven
 ---
 

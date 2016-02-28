@@ -17,7 +17,7 @@
 
   {% capture baseurl %}{{ site.baseurl }}/music/{{ album.slug }}{% endcapture %}
   <ul class="list-group">
-  {% assign songs = site.songs | where: 'album', album.name[page.lang] | sort: 'position' %}
+  {% assign songs = site.songs | where: 'album', album.name.en | sort: 'position' %}
   {% for song in songs %}
     <li class="list-group-item song-item">
       {% include music/song.html %}
