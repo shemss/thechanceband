@@ -17,10 +17,19 @@
     display: table;
     table-layout: fixed;
     float:none;
+
+    @media (max-width: 955px) {
+      clear: both;
+    }
+  }
+
+  .navbar-nav > li > a {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .navbar {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
   }
 }

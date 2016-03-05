@@ -20,18 +20,23 @@ $logo-height: 17px;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 
+  font-family: "StereoGothic-900", $font-family-base;
+  font-size: 14px;
+  background-position: $navbar-padding-horizontal center;
+  text-transform: uppercase;
+
   &:hover {
     opacity: 0.5;
   }
 
-  @media (min-width: 922px) {
-    font-family: "StereoGothic-900", $font-family-base;
-    font-size: 14px;
-
+  @media (min-width: 580px) {
     text-indent: ($logo-width + ($navbar-padding-horizontal / 2));
     width: auto;
-    background-position: $navbar-padding-horizontal center;
-    text-transform: uppercase;
+  }
+
+  @media (min-width: 956px) and (max-width: 1040px) {
+    text-indent: -100000px;
+    width: ($logo-width + ($navbar-padding-horizontal * 2));
   }
 }
 
