@@ -5,8 +5,8 @@
       {{ section.content }}
     {% else %}
       <div class="section" {% unless section.noid %}
-        id="{{ section.name.en | downcase }}"{% endunless%}>
-        <div class="sp-page sp-page-{{ section.name.en | downcase }}">
+        id="{{ section.slug }}"{% endunless%}>
+        <div class="sp-page sp-page-{{ section.slug }}">
           <div class="container-fluid">
             <div class="container-fluid container-fluid-inner">
               {{ section.content }}

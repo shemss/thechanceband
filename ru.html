@@ -4,5 +4,5 @@ lang: ru
 permalink: /ru/
 ---
 
-{% assign sections = site.sections | sort: 'position' %}
+{% assign sections = site.sections | where: 'lang','ru' | sort: 'position' %}
 {% include sections.html %}

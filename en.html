@@ -4,5 +4,5 @@ lang: en
 permalink: /en/
 ---
 
-{% assign sections = site.sections | sort: 'position' %}
+{% assign sections = site.sections | where: 'lang','en' | sort: 'position' %}
 {% include sections.html %}

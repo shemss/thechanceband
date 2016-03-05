@@ -1,7 +1,7 @@
 ---
-name:
-  en: Story
-  ru: История
+lang: en
+title: Story
+slug: story
 position: 5
 
 members:
@@ -41,44 +41,4 @@ members:
     destiny to be an encouragement to the world.
 ---
 
-<h2>Our Story</h2>
-<p>
-  The “Chance” band began its journey in 1996. Through their music
-  they led many hearts to Christ. They use their lyrics to inspire
-  the young generation of today’s times. Each and every one of the
-  group member’s dedicated their hearts and souls to God. They formed
-  an alliance between one another and brought their talents together
-  to form something bigger than just a band but a brotherly
-  friendship. Take the Chance and listen.
-</p>
-
-<div class="members">
-  <div class="row">
-  {% for member in page.members %}
-    {% assign filename = member.name | split:' ' | first | downcase %}
-    {% assign resolutions = '320x448 480x672 580x812 700x978 870x1218 1278x1790' | split:' ' %}
-    {% capture args %}[resize:>{{ resolutions | first }}]{% endcapture %}
-    {% capture photo %}story/{{ filename }}.jpg {{ args }}{% endcapture %}
-    <div class="col-sm-6 col-md-3">
-      <div class="member">
-        <p>
-          <img src="{{ photo | asset_path }}"
-            srcset="
-            {% for res in resolutions %}
-              {% capture args %}[resize:>{{ res }}]{% endcapture %}
-              {% capture photo %}story/{{ filename }}.jpg {{ args }}{% endcapture %}
-              {{ photo | asset_path }} {{ res | split: 'x' | first }}w,
-            {% endfor %}"
-            sizes="
-              (max-width: 669px) calc(100vw - 30px),
-              (max-width: 789px) calc(50vw - 45px),
-              (max-width: 1199px) calc(25vw - 45px), 263px"
-            alt="{{ member.name }}" class="img-responsive">
-        </p>
-        <h3>{{ member.name }}</h3>
-        <p class="member-bio">{{ member.bio }}</p>
-      </div>
-    </div>
-  {% endfor %}
-  </div>
-</div>
+{% include sections/story.html %}

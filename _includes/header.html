@@ -26,12 +26,12 @@
       {% include lang-links.html %}
 
       <ul class="nav navbar-nav navbar-center">
-        {% assign sections = site.sections | sort: 'position' %}
+        {% assign sections = site.sections | where: 'lang',page.lang | sort: 'position' %}
         {% for section in sections %}
         {% if section.noid or section.raw %}{% continue %}{% endif %}
           <li>
-            <a href="#{{ section.name.en | downcase }}">
-              {{ section.name[page.lang] }}
+            <a href="#{{ section.slug }}">
+              {{ section.title }}
             </a>
           </li>
         {% endfor %}

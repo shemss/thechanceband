@@ -1,7 +1,7 @@
 ---
-name:
-  en: Media
-  ru: Галерея
+lang: ru
+title: Галерея
+slug: media
 position: 3
 
 gallery:
@@ -45,32 +45,4 @@ gallery:
   title: Vadim Practicing in the Garage
 ---
 
-
-<h2>Media</h2>
-
-<div class="row row-gallery">
-{% for item in page.gallery %}
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    {% assign image_full = item.image | prepend: 'gallery/' %}
-    {% assign image_222 = image_full | append: ' [resize:>222x222^]' %}
-    {% assign image_444 = image_full | append: ' [resize:>444x444^]' %}
-    {% assign image_666 = image_full | append: ' [resize:>666x666^]' %}
-    {% assign image_2000 = image_full | append: ' [resize:>2000x2000]' %}
-    <style>
-      .gallery-thumb-{{ item.image | split:'.' | first }} {
-        background-image: url("{{ image_222 | asset_path }}");
-        background-image: -webkit-image-set(
-          url("{{ image_222 | asset_path }}") 1x,
-          url("{{ image_444 | asset_path }}") 2x,
-          url("{{ image_666 | asset_path }}") 3x
-        );
-      }
-    </style>
-    <a class="gallery-item lightbox" rel="gallery"
-      href="{{ image_2000 | asset_path }}" title="{{ item.title }}">
-      <div class="gallery-thumb gallery-thumb-{{ item.image | split:'.' | first }}"></div>
-      <p class="gallery-title">{{ item.title }}</p>
-    </a>
-  </div>
-{% endfor %}
-</div>
+{% include sections/media.html %}

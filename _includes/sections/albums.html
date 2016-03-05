@@ -1,8 +1,3 @@
----
-position: 2
-raw: true
----
-
 {% for album in site.albums %}
   {% include section-css.html section=album %}
   <div class="section" id="music-{{ album.name.en | downcase }}" data-target="music">
@@ -24,4 +19,3 @@ raw: true
     </div>
   </div>
 {% endfor %}
-

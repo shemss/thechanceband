@@ -1,5 +1,5 @@
 {% if include.section.bg %}
-  {% capture bg %}pages/{{ include.section.name.en | downcase }}.jpg{% endcapture %}
+  {% capture bg %}pages/{{ include.section.slug }}.jpg{% endcapture %}
   {% assign bg_480 = bg | append: ' [resize:>480x480^]' %}
   {% assign bg_960 = bg | append: ' [resize:>960x960^]' %}
   {% assign bg_1140 = bg | append: ' [resize:>1140x1140^]' %}
@@ -8,7 +8,7 @@
   {% assign bg_2880 = bg | append: ' [resize:>2880x2880^]' %}
   <style>
     @media (max-width: 480px) {
-      .sp-page-{{ include.section.name.en | downcase }} {
+      .sp-page-{{ include.section.slug }} {
         background-image: url("{{ bg_480 | asset_path }}");
         background-image: -webkit-image-set(
           url("{{ bg_480 | asset_path }}") 1x,
@@ -18,7 +18,7 @@
       }
     }
     @media (min-width: 481px) and (max-width: 960px) {
-      .sp-page-{{ include.section.name.en | downcase }} {
+      .sp-page-{{ include.section.slug }} {
         background-image: url("{{ bg_960 | asset_path }}");
         background-image: -webkit-image-set(
           url("{{ bg_960 | asset_path }}") 1x,
@@ -28,7 +28,7 @@
       }
     }
     @media (min-width: 961px) and (max-width: 1140px) {
-      .sp-page-{{ include.section.name.en | downcase }} {
+      .sp-page-{{ include.section.slug }} {
         background-image: url("{{ bg_1140 | asset_path }}");
         background-image: -webkit-image-set(
           url("{{ bg_1140 | asset_path }}") 1x,
@@ -38,7 +38,7 @@
       }
     }
     @media (min-width: 1141px) {
-      .sp-page-{{ include.section.name.en | downcase }} {
+      .sp-page-{{ include.section.slug }} {
         background-image: url("{{ bg_2280 | asset_path }}");
         background-image: -webkit-image-set(
           url("{{ bg_2280 | asset_path }}") 1x,
