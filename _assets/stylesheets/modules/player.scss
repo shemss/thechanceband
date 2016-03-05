@@ -51,7 +51,7 @@
 #music-progress {
   width: 0;
   height: 5px;
-  background: rgba(#0ef,0.25);
+  background: rgba(lighten(saturate($brand-primary, 100%), 10%), 0.5);
   position: relative;
   margin-top: 5px;
 }
