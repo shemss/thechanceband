@@ -1,33 +1,18 @@
 <div id="cfp" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#cfp" data-slide-to="0" class="active"></li>
-    <li data-target="#cfp" data-slide-to="1"></li>
+    {% for slide in page.slides %}
+      <li data-target="#cfp" data-slide-to="{{ forloop.index0 }}"
+        {% if forloop.first %}class="active"{% endif %}></li>
+    {% endfor %}
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <h1>Watch "Sky" &ndash; Official video</h1>
-      <p>Do you remember our childhood when we would
-      dream about swimming in the clouds.</p>
-      <p>
-        <a href="https://soundcloud.com/chancebandmusic/sets/dot"
-          target="_blank">Watch the Video
-          <i class="fa fa-play-circle"></i>
-        </a>
-      </p>
-    </div>
-    <div class="item">
-      <h1>New album "dot" Available now</h1>
-      <p>You see what you see, the past is not the same,
-      a dot has been put on the cross of Calvary.</p>
-      <p>
-        <a href="https://soundcloud.com/chancebandmusic/sets/dot"
-          target="_blank">Free Download
-          <i class="fa fa-download"></i>
-        </a>
-      </p>
-    </div>
+    {% for slide in page.slides %}
+      <div class="item{% if forloop.first %} active{% endif %}">
+        {{ slide }}
+      </div>
+    {% endfor %}
   </div>
 </div>
