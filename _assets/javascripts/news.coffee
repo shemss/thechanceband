@@ -1,6 +1,6 @@
 initNews = ->
   twitterFetcher.fetch
-    id: '638873667997319169'
+    id: '706267740412071936'
     domId: 'twitter-feed'
     maxTweets: 7
     customCallback: (tweets) ->
