@@ -1,5 +1,8 @@
 navigateTo = ($section) ->
+  prevSectionId = location.href.split('#')[1]
   sectionId = $section.attr('id')
+  return if prevSectionId == sectionId
+
   $section.attr('id', '')
   location.replace '#'+sectionId
   $section.attr('id', sectionId)
