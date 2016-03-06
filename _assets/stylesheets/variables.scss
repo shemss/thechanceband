@@ -73,7 +73,7 @@ $font-size-h6:            ceil(($font-size-base * 0.55)); // ~8px
 // $headings-font-family:    inherit !default;
 $headings-font-weight:    100;
 // $headings-line-height:    1.1 !default;
-// $headings-color:          inherit !default;
+$headings-color:          $gray-base;
 
 
 //== Iconography
