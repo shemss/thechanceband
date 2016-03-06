@@ -4,8 +4,9 @@
     {% if section.raw %}
       {{ section.content }}
     {% else %}
-      <div class="section" {% unless section.noid %}
-        id="{{ section.slug }}"{% endunless%}>
+      <div class="section"
+        {% unless section.noid %}id="{{ section.slug }}"{% endunless%}
+        {% if section.target %}data-target="{{ section.target }}"{% endif %}>
         <div class="sp-page sp-page-{{ section.slug }}">
           <div class="container-fluid">
             <div class="container-fluid container-fluid-inner">
