@@ -6,6 +6,8 @@
     {% else %}
       <div class="section"
         {% unless section.noid %}id="{{ section.slug }}"{% endunless%}
+        {% if section.bgvid %}data-bgvid="{{ section.bgvid }}"{% endif %}
+        {% if section.bgvidloop %}data-loop="true"{% endif %}
         {% if section.target %}data-target="{{ section.target }}"{% endif %}>
         <div class="sp-page sp-page-{{ section.slug }}">
           <div class="container-fluid">

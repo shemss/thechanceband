@@ -3,6 +3,7 @@
 //= require vendor/jquery.fancybox
 //= require vendor/jquery.cookie
 //= require vendor/twitterFetcher
+//= require vendor/autoplay-detection
 //= require ./bootstrap
 //= require news
 //= require nav
@@ -11,3 +12,4 @@
 //= require lightbox
 //= require lang
 //= require more
+//= require bg-video

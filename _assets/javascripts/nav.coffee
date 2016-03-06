@@ -12,6 +12,8 @@ navigateTo = ($section) ->
     $link.attr('href',
       [$link.attr('href').split('#')[0], sectionId].join('#'))
 
+  $(window.location).trigger('change')
+
 
 scrollSpyEnd = ->
   $destination = null
