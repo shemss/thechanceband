@@ -6,7 +6,7 @@
 }
 
 .gallery-item {
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   background: #000;
   display: block;
   position: relative;
@@ -72,11 +72,11 @@
 }
 
 [class~="row-gallery"] {
-  padding: 0 12px;
+  padding: 0 14px;
 
   [class^="col-"],
   [class*=" col-"] {
-    padding: 0 3px;
+    padding: 0 1px;
 
     @media (min-width: $screen-lg) {
       width: 20%;
