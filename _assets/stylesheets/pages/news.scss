@@ -1,10 +1,8 @@
-$avatar-margin: 48px + (15px * 2);
+$avatar-margin: 48px + 15px;
 
 .news-more {
   margin-bottom: 30px;
   text-shadow: 0 1px 5px rgba(0,0,0,0.5);
-
-  a, a:link, a:visited { color: #fff; }
 }
 
 #twitter-feed {
@@ -12,12 +10,9 @@ $avatar-margin: 48px + (15px * 2);
     @extend .list-unstyled;
 
     > li {
-      @extend .panel;
-      @extend .panel-default;
       @extend .clearfix;
-      padding: 15px;
       padding-left: $avatar-margin;
-      background-color: rgba(255,255,255,0.93);
+      margin-bottom: $line-height-computed;
       border: 0;
     }
   }
@@ -26,11 +21,12 @@ $avatar-margin: 48px + (15px * 2);
     @extend .truncate;
     display: inline-block;
     max-width: 100%;
+    vertical-align: bottom;
   }
 
   [data-scribe="element:avatar"] {
     position: absolute;
-    margin-left: -($avatar-margin - 15px);
+    margin-left: -($avatar-margin);
     width: 48px;
     height: 48px;
   }
@@ -38,29 +34,17 @@ $avatar-margin: 48px + (15px * 2);
   .timePosted,
   [data-scribe="element:screen_name"] {
     @extend small;
-    @extend .text-muted;
   }
 
   [data-scribe="element:name"] {
     font-weight: bold;
-    color: $text-color;
   }
 
-  [data-scribe="element:user_link"]:hover {
+  [data-scribe="element:user_link"] {
     text-decoration: none;
 
-    [data-scribe="element:name"] {
-      color: $link-hover-color;
+    &:hover [data-scribe="element:name"] {
       text-decoration: underline;
-    }
-  }
-
-  .timePosted a,
-  .interact a {
-    color: lighten($gray-light, 20%);
-
-    &:hover {
-      color: $link-hover-color;
     }
   }
 

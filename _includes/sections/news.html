@@ -1,7 +1,15 @@
-<h2 class="heading-alt">News</h2>
+<div class="jumbotron media-header text-inverse">
+  <h1>{{ page.title }}</h1>
+</div>
 
-<div id="twitter-feed"></div>
+<div class="row">
+  <div class="col-sm-11 col-md-10 col-lg-9">
+    <div id="twitter-feed" class="text-inverse"></div>
 
-<p class="news-more text-right">
-  <a href="{{ site.social.twitter }}" target="_blank">Read More on Twitter</a>
-</p>
+    <p class="news-more text-right text-inverse">
+      <a href="{{ site.social.twitter }}" target="_blank">
+        {{ page.read_more }}
+      </a>
+    </p>
+  </div>
+</div>
