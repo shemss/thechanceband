@@ -29,3 +29,33 @@
   {% endfor %}
   </div>
 </div>
+
+<div class="jumbotron media-header">
+  <p class="lead"><a href="#gallery-videos" class="scroll-back">Videos</a></p>
+</div>
+
+<div class="cont-gallery">
+  <div id="gallery-videos" class="row-gallery">
+  {% for item in page.videos %}
+    {% assign image_full = item.image | prepend: 'gallery/videos/' %}
+    {% assign image_222 = image_full | append: ' [resize:>222x222^]' %}
+    {% assign image_444 = image_full | append: ' [resize:>444x444^]' %}
+    {% assign image_666 = image_full | append: ' [resize:>666x666^]' %}
+    <style>
+      .gallery-thumb-{{ item.image | split:'.' | first }} {
+        background-image: url("{{ image_222 | asset_path }}");
+        background-image: -webkit-image-set(
+          url("{{ image_222 | asset_path }}") 1x,
+          url("{{ image_444 | asset_path }}") 2x,
+          url("{{ image_666 | asset_path }}") 3x
+        );
+      }
+    </style>
+    <a class="gallery-item video-preview" rel="gallery"
+      href="{{ item.url }}" title="{{ item.title }}">
+      <div class="gallery-thumb gallery-thumb-{{ item.image | split:'.' | first }}"></div>
+      <p class="gallery-title">{{ item.title }}</p>
+    </a>
+  {% endfor %}
+  </div>
+</div>
