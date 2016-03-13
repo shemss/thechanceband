@@ -6,8 +6,7 @@
   width: 100%;
 }
 
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  .member-bio {
-    min-height: 220px;
-  }
+.member-bio .read-more {
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed * 2);
 }
