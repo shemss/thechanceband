@@ -1,10 +1,11 @@
 <div class="jumbotron media-header">
-  <h1>{{ page.title }}</h1>
+  <h1>{{ page.title_long }}</h1>
+  <p class="lead"><a href="#gallery-photos" class="scroll-back">Photos</a></p>
 </div>
 
-<div class="row row-gallery">
-{% for item in page.gallery %}
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+<div class="cont-gallery">
+  <div id="gallery-photos" class="row-gallery">
+  {% for item in page.gallery %}
     {% assign image_full = item.image | prepend: 'gallery/' %}
     {% assign image_222 = image_full | append: ' [resize:>222x222^]' %}
     {% assign image_444 = image_full | append: ' [resize:>444x444^]' %}
@@ -25,6 +26,6 @@
       <div class="gallery-thumb gallery-thumb-{{ item.image | split:'.' | first }}"></div>
       <p class="gallery-title">{{ item.title }}</p>
     </a>
+  {% endfor %}
   </div>
-{% endfor %}
 </div>

@@ -13,3 +13,4 @@
 //= require lang
 //= require more
 //= require bg-video
+//= require media
