@@ -9,7 +9,7 @@
 .connect-social {
   @extend .clearfix;
 
-  margin: 20px -5px;
+  margin: 50px -5px 20px;
   padding: 0;
 
   li {
@@ -94,4 +94,17 @@
 
 .btn {
   border: 0;
+}
+
+$btn-chance-bg: #3d3d3d;
+$btn-chance-color: #82b8c8;
+
+.btn-chance {
+  background: $btn-chance-bg;
+  color: $btn-chance-color;
+
+  &:hover {
+    background: darken($btn-chance-bg, 5%);
+    color: lighten($btn-chance-color, 5%);
+  }
 }

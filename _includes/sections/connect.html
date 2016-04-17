@@ -1,5 +1,3 @@
-<h2 class="heading-alt">Connect</h2>
-
 <ul class="connect-social">
   {% for social in site.social %}
     <li><a href="{{ social[1] }}" target="_blank" class="square">
@@ -21,31 +19,19 @@
     <input name="utf8" type="hidden" value="✓">
   </div>
 
-  <h3 class="heading-alt">Send us a Message</h3>
+  <h2 class="text-inverse">{{ page.heading }}</h2>
 
   <div class="form-group">
-    <label class="control-label sr-only" for="name">
-      <abbr title="required">*</abbr> Name</label>
-    <input class="form-control" id="name" name="name" type="text"
-      placeholder="Name">
-  </div>
-
-  <div class="form-group">
-    <label class="control-label sr-only" for="email">Email</label>
-    <input class="form-control" id="email" name="email" type="email"
-      placeholder="Email">
-  </div>
-
-  <div class="form-group">
-    <label class="control-label sr-only" for="message">
-      Message</label>
-    <textarea class="form-control" id="message" name="message" rows="10"
-      placeholder="Message"></textarea>
-  </div>
-
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">
-      Send Message</button>
+    <label class="control-label sr-only" for="email">{{ page.email }}</label>
+    <div class="input-group input-group-lg">
+      <input class="form-control" id="email" name="email" type="email"
+        placeholder="{{ page.placeholder }}">
+      <div class="input-group-btn">
+        <button class="btn btn-chance" type="submit">
+          <span class="sr-only">{{ page.sign_up }}</span>
+          &#x27E9;</button>
+      </div>
+    </div>
   </div>
 </form>
 
