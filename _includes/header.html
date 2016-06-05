@@ -15,7 +15,7 @@
           </span>
         </span>
       </button>
-      <a class="navbar-brand" href="#home">
+      <a class="navbar-brand" href="/{{ page.lang }}/#home">
         {{ site[page.lang].brand }}
       </a>
       {% include lang-links.html %}
@@ -36,7 +36,7 @@
         {% for section in sections %}
         {% unless section.title %}{% continue %}{% endunless %}
           <li>
-            <a href="#{{ section.slug }}">
+            <a href="/{{ page.lang }}/#{{ section.slug }}">
               {{ section.title }}
             </a>
           </li>

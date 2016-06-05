@@ -1,8 +1,12 @@
 <ul class="nav navbar-nav navbar-right lang-links">
+  {% assign curr_lang = page.lang | prepend: '/' | append: '/' %}
   {% assign languages = 'en,ru' | split: ',' %}
   {% for lang in languages %}
+    {% assign lang_href = lang | prepend: '/' | append: '/' %}
     <li{% if lang == page.lang %} class="active"{% endif %}>
-      <a href="/{{ lang }}/">{{ lang | upcase }}</a>
+      <a href="{{ page.permalink | replace: curr_lang, lang_href }}">
+        {{ lang | upcase }}
+      </a>
     </li>
   {% endfor %}
 </ul>

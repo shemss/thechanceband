@@ -23,7 +23,7 @@ scrollSpyEnd = ->
     if $section.offset().top < ($(window).scrollTop() + 40)
       $destination = $section
 
-  $("#site-navbar a[href='##{$destination.data('target') || $destination.attr('id')}']")
+  $("#site-navbar a[href$='##{$destination.data('target') || $destination.attr('id')}']")
   .parent().addClass('active')
   .siblings().removeClass('active')
 
@@ -39,7 +39,7 @@ scrollSpy = ->
 initScroll = ->
   $('#site-navbar .navbar-center a, .navbar-brand').click (e) ->
     e.preventDefault()
-    $(window).scrollTo($(this).attr('href'), 500)
+    $(window).scrollTo('#'+$(this).attr('href').split('#')[1], 500)
 
   $(window).scroll(scrollSpy).scroll()
 
