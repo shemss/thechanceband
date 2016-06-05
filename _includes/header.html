@@ -23,7 +23,13 @@
     </div>
 
     <div class="collapse navbar-collapse" id="site-navbar">
-      {% include lang-links.html %}
+      <div class="lang-and-donate">
+        {% include lang-links.html %}
+        <button class="btn btn-primary navbar-btn btn-donate"
+          onclick="window.open(document.getElementById('donate').getAttribute('href'))">
+          Donate
+        </button>
+      </div>
 
       <ul class="nav navbar-nav navbar-center">
         {% assign sections = site.sections | where: 'lang',page.lang | sort: 'position' %}

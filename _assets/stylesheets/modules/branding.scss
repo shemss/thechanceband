@@ -34,7 +34,7 @@ $logo-height: 17px;
     width: auto;
   }
 
-  @media (min-width: 956px) and (max-width: 1040px) {
+  @media (min-width: 1045px) and (max-width: 1128px) {
     text-indent: -100000px;
     width: ($logo-width + ($navbar-padding-horizontal * 2));
   }
