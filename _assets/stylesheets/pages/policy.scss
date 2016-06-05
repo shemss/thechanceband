@@ -1,0 +1,19 @@
+.sp-page-policy {
+  position: relative;
+
+  ol ol {
+    list-style-type: lower-alpha;
+  }
+
+  .site-footer {
+    border-top: 1px solid $hr-border;
+  }
+}
+
+html[lang="ru"] .sp-page-policy ol ol {
+  list-style-type: lower-russian;
+}
+
+.article-policy {
+  margin-bottom: 200px;
+}

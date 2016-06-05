@@ -1,0 +1,25 @@
+{% include head.html %}
+
+<style>
+  .navbar-music {
+    display: none;
+  }
+</style>
+
+{% include header.html %}
+
+<div id="fullpage">
+  <div class="section" id="policy">
+    <div class="sp-page sp-page-policy">
+      <div class="container-fluid">
+        <div class="container-fluid container-fluid-inner">
+          <article class="article-policy">
+            {{ content }}
+          </article>
+          {% include footer.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
