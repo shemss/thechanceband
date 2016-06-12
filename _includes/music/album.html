@@ -1,12 +1,12 @@
 <div class="album">
   {% assign resolutions = '290 360 580 720 870 1080' | split:' ' %}
   {% assign args = '[resize:>360x360]' %}
-  {% capture cover %}albums/{{ album.slug }}.jpg {{ args }}{% endcapture %}
+  {% capture cover %}albums/{{ album.slug }}-{{ page.lang }}.jpg {{ args }}{% endcapture %}
   <img src="{{ cover | asset_path }}"
     srcset="
     {% for res in resolutions %}
       {% capture args %}[resize:>{{ res }}x{{ res }}]{% endcapture %}
-      {% capture cover %}albums/{{ album.slug }}.jpg {{ args }}{% endcapture %}
+      {% capture cover %}albums/{{ album.slug }}-{{ page.lang }}.jpg {{ args }}{% endcapture %}
       {{ cover | asset_path }} {{ res }}w,
     {% endfor %}"
     sizes="
