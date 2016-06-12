@@ -34,11 +34,11 @@ donate:
 - bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 
 social:
-  facebook: https://www.facebook.com/chancebandsongs
+  facebook: https://www.facebook.com/chancebandmusic
   twitter: https://twitter.com/chancebandmusic
-  youtube: https://www.youtube.com/channel/UCyOswyvw8ugbS22ZSVop4bg
-  google-plus: https://plus.google.com/108316022689360703562/posts
-  pinterest: http://www.pinterest.com/sergshemyakin/
+  youtube: https://www.youtube.com/channel/UCNKlcqmdt7kFJAytbtNed5Q
+  google-plus: https://plus.google.com/+thechanceband101
+  vk: https://vk.com/thechanceband
 
 # Build settings
 markdown: kramdown
