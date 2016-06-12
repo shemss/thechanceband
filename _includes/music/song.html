@@ -18,7 +18,7 @@
           </span>
         </a>
       </li>
-      <li>{{ song.title }}</li>
+      <li>{{ song.name[page.lang] }}</li>
     </ul>
 
     <ul class="list-inline pull-right">
@@ -30,7 +30,7 @@
         <i class="fa fa-music"></i>
         <span class="sr-only">Instrumental</span>
       </a></li>
-      <li><a href="{{ baseurl }}/lyrics/{{ song.slug }}.pdf" title="Lyrics/Chords">
+      <li><a href="{{ baseurl }}/chords/{{ song.slug }}.pdf" title="Lyrics/Chords">
         <i class="fa fa-file-text"></i>
         <span class="sr-only">Lyrics/Chords</span>
       </a></li>
