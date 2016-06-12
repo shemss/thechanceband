@@ -8,7 +8,7 @@ initBgVideo = ->
   $('[data-bgvid]').each ->
     $section = $(this)
     $section.prepend(
-      $('<video class="bgvid">').on 'loadeddata', ->
+      $('<video class="bgvid" muted>').on 'loadeddata', ->
         $section.addClass('video-loaded')
       .prop('loop', $section.data('loop'))
       .append(source($section, 'webm'))
