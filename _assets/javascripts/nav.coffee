@@ -56,6 +56,15 @@ initNav = ->
   initScroll()
 
 
+hilightSong = ->
+  sectionId = location.href.split('#')[1]
+  if sectionId && sectionId.indexOf('--') > -1
+    $song = $('#'+sectionId).closest('.song-item')
+    $song.addClass('hilight')
+    navigateTo($song.closest('.section'))
+
+
+$ hilightSong
 $ initNav
 
 

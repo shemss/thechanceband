@@ -22,19 +22,74 @@
     </ul>
 
     <ul class="list-inline pull-right">
-      <li><a href="{{ baseurl }}/songs/{{ song.slug }}.mp3" title="Download">
-        <i class="fa fa-download"></i>
-        <span class="sr-only">Download</span>
-      </a></li>
-      <li><a href="{{ baseurl }}/inst/{{ song.slug }}.mp3" title="Instrumental">
-        <i class="fa fa-music"></i>
-        <span class="sr-only">Instrumental</span>
-      </a></li>
-      <li><a href="{{ baseurl }}/chords/{{ song.slug }}.pdf" title="Lyrics/Chords">
-        <i class="fa fa-file-text"></i>
-        <span class="sr-only">Lyrics/Chords</span>
-      </a></li>
-      <!-- <li>Share</li> -->
+      <li>
+        <button type="button" class="navbar-toggle collapsed"
+          data-toggle="collapse" aria-expanded="false" title="More"
+          aria-controls="music-{{ album.slug }}--{{ song.slug }}"
+          data-target="#music-{{ album.slug }}--{{ song.slug }}">
+          <span class="sr-only">More</span>
+          <span class="navbar-toggle-inner">
+            <span class="icon-bar-wrapper icon-bar-wrapper-top">
+              <span class="icon-bar icon-bar-top"></span>
+            </span>
+            <span class="icon-bar-wrapper icon-bar-wrapper-middle">
+              <span class="icon-bar icon-bar-middle"></span>
+            </span>
+            <span class="icon-bar-wrapper icon-bar-wrapper-bottom">
+              <span class="icon-bar icon-bar-bottom"></span>
+            </span>
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="collapse" id="music-{{ album.slug }}--{{ song.slug }}">
+    <ul class="list-inline text-center song-actions">
+      <li>
+        <a href="{{ baseurl }}/songs/{{ song.slug }}.mp3" title="Download">
+          <i class="fa fa-download"></i>
+          <span class="sr-only">Download</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ baseurl }}/inst/{{ song.slug }}.mp3" title="Instrumental">
+          <i class="fa fa-music"></i>
+          <span class="sr-only">Instrumental</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ baseurl }}/chords/{{ song.slug }}.pdf" title="Lyrics/Chords">
+          <i class="fa fa-file-text"></i>
+          <span class="sr-only">Lyrics/Chords</span>
+        </a>
+      </li>
+      <li>Share:</li>
+      {% capture album_url %}{{ site.url | replace: ':', '%3A' }}{{ site.baseurl }}/{{ page.lang }}/%23music-{{ album.slug }}{% endcapture %}
+      {% capture song_url %}{{ album_url }}--{{ song.slug }}{% endcapture %}
+      {% assign song_title = song.name[page.lang] | replace: ' ', '+' %}
+      {% capture tweet %}{{ page.tweet | replace: ' ', '+' }}:+{{ song_title }}{% endcapture %}
+      <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ song_url }}"
+          title="Facebook" target="_blank">
+          <i class="fa fa-facebook"></i>
+          <span class="sr-only">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/home?status={{ tweet }}%0A{{ song_url }}"
+          title="Twitter" target="_blank">
+          <i class="fa fa-twitter"></i>
+          <span class="sr-only">Twitter</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://vk.com/share.php?url={{ song_url }}&amp;title={{ tweet }}"
+          title="VKontakte" target="_blank">
+          <i class="fa fa-vk"></i>
+          <span class="sr-only">VKontakte</span>
+        </a>
+      </li>
     </ul>
   </div>
 
