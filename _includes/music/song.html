@@ -4,8 +4,10 @@
 
     <ul class="list-inline pull-left">
       <li>
-        <audio class="song-audio" src="{{ baseurl }}/songs/{{ song.slug }}.mp3"></audio>
-        <a href="#" class="song-toggle" title="Play/Pause">
+        <audio class="song-audio"
+          src="{{ baseurl }}/songs/{{ song.slug }}.mp3"></audio>
+        <a href="{{ baseurl }}/songs/{{ song.slug }}.mp3"
+          class="song-toggle" title="Play/Pause">
           <span class="play">
             <i class="fa fa-play"></i>
             <span class="sr-only">Play</span>
