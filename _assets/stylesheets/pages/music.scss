@@ -57,6 +57,11 @@
   min-width: 12px;
 }
 
+.lyrics,
+.lyrics-title {
+  color: #fff;
+}
+
 .lyrics {
   position: absolute;
   left: 0;
@@ -64,7 +69,6 @@
   width: 100%;
 
   background: rgba(0,0,0,0.7);
-  color: $gray-lighter;
   opacity: 0.00001;
 
   -webkit-transition: opacity 1s;
