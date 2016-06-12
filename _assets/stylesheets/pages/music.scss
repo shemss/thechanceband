@@ -82,9 +82,15 @@
 
   pointer-events: none;
 
+  .outdent {
+    position: absolute;
+    padding-right: 5px;
+    transform: translateX(-100%);
+  }
+
   .content {
     overflow: hidden;
-    padding: 15px;
+    padding: 0 15px 15px 30px;
   }
 }
 
