@@ -4,7 +4,6 @@ name:
   ru: Точка
 position: 1
 album: Dot
-slug: 01-dot
 ---
 
 <span class="text-muted">Введение:</span>  

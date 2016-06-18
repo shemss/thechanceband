@@ -4,7 +4,6 @@ name:
   ru: Годы как тучи
 position: 8
 album: Dot
-slug: 08-years-like-the-clouds
 ---
 
 <span class="text-muted outdent">1.</span>

@@ -4,7 +4,6 @@ name:
   ru: Ну и пусть
 position: 10
 album: Dot
-slug: 10-let-it-be
 ---
 
 <span class="text-muted outdent">1.</span>

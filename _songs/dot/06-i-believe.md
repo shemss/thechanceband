@@ -4,7 +4,6 @@ name:
   ru: Я верю
 position: 6
 album: Dot
-slug: 06-i-believe
 ---
 
 <span class="text-muted">Припев:</span>  

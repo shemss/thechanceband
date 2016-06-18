@@ -1,12 +1,25 @@
+{% if song.position >= 10 %}{% assign pad_pos = song.position %}{% else %}
+  {% assign pad_pos = song.position | prepend: '0' %}{% endif %}
+
+{% capture song_url %}{{ baseurl }}/songs/{{ pad_pos }} {{ song.name.ru }}.mp3{% endcapture%}
+{% capture inst_url %}{{ baseurl }}/inst/{{ pad_pos }} {{ song.name.ru }} (instrumental).mp3{% endcapture%}
+{% capture chords_url %}{{ baseurl }}/chords/{{ pad_pos }} {{ song.name.ru }}.pdf{% endcapture %}
+
+{% capture song_slug %}music-{{ album.slug }}--{{ song.name.en | downcase | replace: ' ','-' }}{% endcapture %}
+
+{% capture site_url %}{{ site.url | replace: ':', '%3A' }}{{ site.baseurl }}/{{ page.lang }}{% endcapture %}
+{% capture share_url %}{{ site_url }}/%23{{ song_slug }}{% endcapture %}
+{% assign song_title = song.name[page.lang] | replace: ' ', '+' %}
+{% capture tweet %}{{ page.tweet | replace: ' ', '+' }}:+{{ song_title }}{% endcapture %}
+
 <div class="song">
   <div class="song-controls clearfix">
     <div class="song-progress"></div>
 
     <ul class="list-inline pull-left">
       <li>
-        <audio class="song-audio"
-          src="{{ baseurl }}/songs/{{ song.slug }}.mp3"></audio>
-        <a href="{{ baseurl }}/songs/{{ song.slug }}.mp3"
+        <audio class="song-audio" src="{{ song_url }}"></audio>
+        <a href="{{ song_url }}"
           class="song-toggle" title="Play/Pause">
           <span class="play">
             <i class="fa fa-play"></i>
@@ -25,8 +38,8 @@
       <li>
         <button type="button" class="navbar-toggle collapsed"
           data-toggle="collapse" aria-expanded="false" title="More"
-          aria-controls="music-{{ album.slug }}--{{ song.slug }}"
-          data-target="#music-{{ album.slug }}--{{ song.slug }}">
+          aria-controls="{{ song_slug }}"
+          data-target="#{{ song_slug }}">
           <span class="sr-only">More</span>
           <span class="navbar-toggle-inner">
             <span class="icon-bar-wrapper icon-bar-wrapper-top">
@@ -44,47 +57,45 @@
     </ul>
   </div>
 
-  <div class="collapse" id="music-{{ album.slug }}--{{ song.slug }}">
+  <div class="collapse" id="{{ song_slug }}">
     <ul class="list-inline text-center song-actions">
       <li>
-        <a href="{{ baseurl }}/songs/{{ song.slug }}.mp3" title="Download">
+        <a href="{{ song_url }}" title="Download"
+          download="{{ pad_pos }} {{ song.name[page.lang] }}.mp3">
           <i class="fa fa-download"></i>
           <span class="sr-only">Download</span>
         </a>
       </li>
       <li>
-        <a href="{{ baseurl }}/inst/{{ song.slug }}.mp3" title="Instrumental">
+        <a href="{{ inst_url }}" title="Instrumental"
+          download="{{ pad_pos }} {{ song.name[page.lang] }} (intrumental).mp3">
           <i class="fa fa-music"></i>
           <span class="sr-only">Instrumental</span>
         </a>
       </li>
       <li>
-        <a href="{{ baseurl }}/chords/{{ song.slug }}.pdf" title="Lyrics/Chords">
+        <a href="{{ chords_url }}" title="Lyrics/Chords">
           <i class="fa fa-file-text"></i>
           <span class="sr-only">Lyrics/Chords</span>
         </a>
       </li>
       <li>Share:</li>
-      {% capture album_url %}{{ site.url | replace: ':', '%3A' }}{{ site.baseurl }}/{{ page.lang }}/%23music-{{ album.slug }}{% endcapture %}
-      {% capture song_url %}{{ album_url }}--{{ song.slug }}{% endcapture %}
-      {% assign song_title = song.name[page.lang] | replace: ' ', '+' %}
-      {% capture tweet %}{{ page.tweet | replace: ' ', '+' }}:+{{ song_title }}{% endcapture %}
       <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ song_url }}"
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
           title="Facebook" target="_blank">
           <i class="fa fa-facebook"></i>
           <span class="sr-only">Facebook</span>
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/home?status={{ tweet }}%0A{{ song_url }}"
+        <a href="https://twitter.com/home?status={{ tweet }}%0A{{ share_url }}"
           title="Twitter" target="_blank">
           <i class="fa fa-twitter"></i>
           <span class="sr-only">Twitter</span>
         </a>
       </li>
       <li>
-        <a href="https://vk.com/share.php?url={{ song_url }}&amp;title={{ tweet }}"
+        <a href="https://vk.com/share.php?url={{ share_url }}&amp;title={{ tweet }}"
           title="VKontakte" target="_blank">
           <i class="fa fa-vk"></i>
           <span class="sr-only">VKontakte</span>

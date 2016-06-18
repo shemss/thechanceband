@@ -4,7 +4,6 @@ name:
   ru: Прости
 position: 5
 album: Dot
-slug: 05-forgive
 ---
 
 <span class="text-muted outdent">1.</span>

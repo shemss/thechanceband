@@ -4,7 +4,6 @@ name:
   ru: Небо
 position: 9
 album: Dot
-slug: 09-sky
 ---
 
 <span class="text-muted">Вступление:</span>  

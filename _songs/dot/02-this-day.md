@@ -4,7 +4,6 @@ name:
   ru: Этот день
 position: 2
 album: Dot
-slug: 02-this-day
 ---
 
 <span class="text-muted outdent">1.</span>

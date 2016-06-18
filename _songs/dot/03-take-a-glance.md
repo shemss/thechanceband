@@ -4,7 +4,6 @@ name:
   ru: Загляни
 position: 3
 album: Dot
-slug: 03-take-a-glance
 ---
 
 <span class="text-muted outdent">1.</span>

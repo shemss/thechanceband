@@ -4,7 +4,6 @@ name:
   ru: Как же так
 position: 4
 album: Dot
-slug: 04-how-can-this-be
 ---
 
 <span class="text-muted outdent">1.</span>

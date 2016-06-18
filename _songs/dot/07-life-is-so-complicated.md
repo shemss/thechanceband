@@ -4,7 +4,6 @@ name:
   ru: Жизнь так сложна
 position: 7
 album: Dot
-slug: 07-life-is-so-complicated
 ---
 
 <span class="text-muted outdent">1.</span>
