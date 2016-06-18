@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}" prefix="og: http://ogp.me/ns#">
 <head>
 
 <meta charset="utf-8">
@@ -7,7 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>{{ page.title }} {{ site[page.lang].title }}</title>
+<meta property="og:title" content="{{ page.title }} {{ site[page.lang].title }}">
 <meta name="description" content="{{ site[page.lang].description }}">
+<meta property="og:description" content="{{ site[page.lang].description }}">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ 'pages/home.jpg [resize:>1200x630^]' | asset_path }}">
 
 {% stylesheet app %}
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
