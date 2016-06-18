@@ -37,7 +37,7 @@ scrollSpy = ->
 
 
 initScroll = ->
-  $('#site-navbar .navbar-center a, .navbar-brand').click (e) ->
+  $('#site-navbar .navbar-center a, .navbar-brand, .nav-link').click (e) ->
     e.preventDefault()
     $(window).scrollTo('#'+$(this).attr('href').split('#')[1], 500)
 
