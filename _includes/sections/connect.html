@@ -13,26 +13,29 @@
   </a></li>
 </ul>
 
-<form accept-charset="UTF-8" class="connect-form" method="post"
-  action="https://fh.hypernovastudio.com/{{ page.form_token }}">
-  <div style="margin:0;padding:0;display:inline">
-    <input name="utf8" type="hidden" value="✓">
-  </div>
+<!-- Begin MailChimp Signup Form -->
+<form accept-charset="UTF-8" class="connect-form" method="post" target="_blank"
+  action="//thechanceband.us13.list-manage.com/subscribe/post?u=ddb67590d552abdbec6b0c664&amp;id=464140b4da">
 
   <h2 class="text-inverse">{{ page.heading }}</h2>
 
   <div class="form-group">
-    <label class="control-label sr-only" for="email">{{ page.email }}</label>
+    <label class="control-label sr-only" for="mce-EMAIL">{{ page.email }}</label>
+
     <div class="input-group input-group-lg">
-      <input class="form-control" id="email" name="email" type="email"
+      <input class="form-control" type="email" name="EMAIL" id="mce-EMAIL"
         placeholder="{{ page.placeholder }}">
+
       <div class="input-group-btn">
-        <button class="btn btn-chance" type="submit">
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddb67590d552abdbec6b0c664_464140b4da" tabindex="-1" value=""></div>
+        <button class="btn btn-chance" type="submit" name="subscribe">
           <span class="sr-only">{{ page.sign_up }}</span>
           &#x27E9;</button>
       </div>
     </div>
   </div>
 </form>
+<!--End mc_embed_signup-->
 
 {% include footer.html %}
