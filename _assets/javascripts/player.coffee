@@ -1,89 +1,96 @@
-playerIndex = 0
-players = null
-currentPlayer = null
+tracks = null
+player = null
+
+
+setTrack = (track) ->
+  $track = $(track)
+  $(player)
+  .attr('src', $track.attr('href'))
+  .data('track', $track.data('index'))
 
 
 toggleTrack = (e) ->
   e.preventDefault()
-  player = $(this).siblings('.song-audio')[0]
-  if player == currentPlayer
+  if $(this).data('index') == $(player).data('track')
     toggleMusic(e)
   else
-    currentPlayer.pause()
-    currentPlayer = player
-    playerIndex = players.index(player)
-    currentPlayer.currentTime = 0
-    currentPlayer.play()
+    setTrack(this)
+    player.play()
 
 
 toggleMusic = (e) ->
   e.preventDefault()
-  if currentPlayer.paused
-    currentPlayer.play()
+  if player.paused
+    player.play()
   else
-    currentPlayer.pause()
+    player.pause()
 
 
 nextButton = (e) ->
   e.preventDefault()
-  nextPlayer()
+  nextTrack()
 
 
 prevButton = (e) ->
   e.preventDefault()
-  prevPlayer()
+  prevTrack()
 
 
 seekTrack = (e) ->
   e.preventDefault()
   offsetX = e.originalEvent.pageX - $(this).offset().left
   position = offsetX / $(this).outerWidth()
-  seekTo = currentPlayer.duration * position
-  currentPlayer.currentTime = seekTo
+  seekTo = player.duration * position
+  player.currentTime = seekTo
 
 
-nextPlayer = ->
-  currentPlayer.pause()
-  currentPlayer = players[++playerIndex]
-  currentPlayer ?= players[playerIndex = 0]
-  currentPlayer.currentTime = 0
-  currentPlayer.play()
+nextTrack = ->
+  index = $(player).data('track')
+  track = tracks[++index] || tracks[0]
+  setTrack(track)
+  player.play()
 
 
-prevPlayer = ->
-  currentPlayer.pause()
-  currentPlayer = players[--playerIndex]
-  currentPlayer ?= players[playerIndex = players.length-1]
-  currentPlayer.currentTime = 0
-  currentPlayer.play()
+prevTrack = ->
+  index = $(player).data('track')
+  track = tracks[--index] || tracks[tracks.length - 1]
+  setTrack(track)
+  player.play()
 
 
-initPlayer = (player, index) ->
-  $(player)
+setProgress = ->
+  position = (100 / player.duration) * player.currentTime
+  $('#music-progress, .song-progress').css
+    width: "#{position}%"
+
+
+initPlayer = ->
+  player = document.createElement('audio')
+
+  $(player).appendTo($('body'))
+
   .on 'playing', ->
-    playerIndex = index
-    currentPlayer = player
+    $('.song').removeClass('playing')
+    setProgress()
+
     $('#music-toggle').addClass('playing')
-    $(player).closest('.song').addClass('playing')
+    track = tracks[$(player).data('track')]
+    $(track).closest('.song').addClass('playing')
 
   .on 'pause', ->
     $('#music-progress-bar').hide()
-    $('#music-toggle').removeClass('playing')
-    $(player).closest('.song').removeClass('playing')
+    $('#music-toggle, .song').removeClass('playing')
 
   .on 'timeupdate', ->
-    position = (100 / player.duration) * player.currentTime
+    setProgress()
     $('#music-progress-bar').show()
-    $('#music-progress, .song-progress').css
-      width: "#{position}%"
 
-  .on 'ended', (e) -> nextPlayer()
+  .on 'ended', (e) -> nextTrack()
 
+  tracks = $('.song-toggle')
+  .each (i) -> $(this).data('index', i)
 
-initPlayers = ->
-  players = $('.song-audio')
-  players.each (i) -> initPlayer this, i
-  currentPlayer = players[playerIndex]
+  setTrack(tracks[0])
 
   $('.song-toggle').click toggleTrack
   $('#music-toggle').click toggleMusic
@@ -92,4 +99,4 @@ initPlayers = ->
   $('#music-progress-bar').on 'touchend touchleave click', seekTrack
 
 
-$ initPlayers
+$ initPlayer
