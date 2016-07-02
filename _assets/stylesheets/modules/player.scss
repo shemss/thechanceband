@@ -7,6 +7,10 @@
   user-select: none;
 }
 
+.navbar-inverse .navbar-music > li > a:focus {
+  color: $navbar-inverse-link-color;
+}
+
 .navbar-music {
   > li > a {
     min-width: 50px;
