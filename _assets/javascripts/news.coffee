@@ -1,6 +1,6 @@
 initNews = ->
   twitterFetcher.fetch
-    id: '706267740412071936'
+    profile: { screenName: 'chancebandmusic' }
     domId: 'twitter-feed'
     maxTweets: 7
     customCallback: (tweets) ->
