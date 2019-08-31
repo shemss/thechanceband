@@ -29,5 +29,4 @@ initBgVideo = ->
   $(window.location).trigger('change')
 
 
-$ ->
-  $(window).on 'autoplay-detected', initBgVideo
+$(initBgVideo)

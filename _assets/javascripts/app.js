@@ -4,7 +4,6 @@
 //= require vendor/jquery.fancybox-media
 //= require vendor/jquery.cookie
 //= require vendor/twitterFetcher
-//= require vendor/autoplay-detection
 //= require ./bootstrap
 //= require news
 //= require nav
