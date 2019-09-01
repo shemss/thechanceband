@@ -4,7 +4,7 @@
       <p class="copyright pull-left">
         <img class="logo-footer" src="{% asset_path 'logo-footer.svg' %}"
           onerror="this.src='{% asset_path 'logo-footer.png' %}'">
-        Copyright &copy; 2015 The Chance Band. All Rights Reserved.
+        Copyright &copy; {{ 'now' | date: "%Y" }} The Chance Band. All Rights Reserved.
       </p>
       <ul class="list-inline pull-right">
         <li><a href="/{{ page.lang }}/privacy-policy/">Privacy Policy</a></li>
