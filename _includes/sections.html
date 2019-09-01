@@ -4,11 +4,15 @@
     {% if section.raw %}
       {{ section.content }}
     {% else %}
-      <div class="section"
+      <div class="section {% if section.bgvid %}video-loaded{% endif %}"
         {% unless section.noid %}id="{{ section.slug }}"{% endunless%}
-        {% if section.bgvid %}data-bgvid="{{ section.bgvid }}"{% endif %}
-        {% if section.bgvidloop %}data-loop="true"{% endif %}
         {% if section.target %}data-target="{{ section.target }}"{% endif %}>
+        {% if section.bgvid %}
+          <video class="bgvid" muted loop autoplay>
+            <source type="video/mp4" src="/bgvids/{{ section.bgvid }}.mp4">
+            <source type="video/ogg" src="/bgvids/{{ section.bgvid }}.ogg">
+          </video>
+        {% endif %}
         <div class="sp-page sp-page-{{ section.slug }}">
           <div class="container-fluid">
             <div class="container-fluid container-fluid-inner">
